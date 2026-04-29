@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Delinea Platform — Why It Matters</title>
+<meta name="description" content="An interactive post-demo tour of the Delinea Platform. Explore by role, see real-world breach scenarios, and discover how identity-centric security changes the outcome." />
+<style>
+  :root {
+    --delinea-purple: #231556;
+    --delinea-purple-deep: #1a1042;
+    --delinea-midnight: #0C102A;
+    --delinea-midnight-deep: #06091a;
+    --delinea-green: #00FF59;
+    --delinea-green-soft: #00B959;
+    --delinea-cyan: #00FFD1;
+    --delinea-orange: #FF7F49;
+    --delinea-sky-blue: #56BAF6;
+    --delinea-red: #FF4D6D;
+    --delinea-red-soft: #c8324d;
+    --delinea-gray: #888B8D;
+    --delinea-light-gray: #E7E7E8;
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.72);
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.16);
+    --font-primary: 'Arial', 'Helvetica Neue', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    background: var(--delinea-midnight-deep);
+    background-image:
+      radial-gradient(ellipse at top left, rgba(35, 21, 86, 0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(0, 255, 89, 0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--delinea-midnight) 0%, var(--delinea-midnight-deep) 100%);
+    background-attachment: fixed;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === Header === */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(12, 16, 42, 0.78);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--delinea-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--delinea-midnight);
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  nav.top-nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  nav.top-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  nav.top-nav a:hover { color: var(--delinea-green); }
+
+  .nav-cta {
+    background: var(--delinea-green);
+    color: var(--delinea-midnight) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 800 !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0, 255, 89, 0.25);
+  }
+
+  @media (max-width: 720px) {
+    nav.top-nav a:not(.nav-cta) { display: none; }
+  }
+
+  /* === Hero === */
+  .hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 100px 32px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 255, 89, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--delinea-green);
+    color: var(--delinea-green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 .accent {
+    color: var(--delinea-green);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero p.lede {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 48px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .hero-stats .stat .num {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    color: var(--delinea-green);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .hero-stats .stat .label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    .hero-stats { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* === Hero Single Stat Pill === */
+  .hero-stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 16px 28px;
+    background: rgba(0, 255, 89, 0.06);
+    border: 1px solid rgba(0, 255, 89, 0.22);
+    border-radius: 100px;
+    margin-top: 16px;
+    box-shadow: 0 0 32px rgba(0, 255, 89, 0.08);
+  }
+
+  .hero-stat-num {
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 900;
+    color: var(--delinea-green);
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .hero-stat-sep {
+    width: 1px;
+    height: 24px;
+    background: rgba(0, 255, 89, 0.3);
+  }
+
+  .hero-stat-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-align: left;
+  }
+
+  @media (max-width: 540px) {
+    .hero-stat-pill {
+      flex-direction: column;
+      gap: 8px;
+      padding: 22px 28px;
+      border-radius: 18px;
+    }
+    .hero-stat-sep { display: none; }
+    .hero-stat-text { text-align: center; }
+  }
+
+  /* === Product Cards === */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 880px) { .product-grid { grid-template-columns: 1fr; } }
+
+  /* === Identity Coverage Row === */
+  .identity-coverage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: -12px;
+    margin-bottom: 40px;
+    padding: 22px 24px;
+    background: rgba(35, 21, 86, 0.25);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+  }
+
+  .identity-coverage-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .identity-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .identity-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(0, 255, 209, 0.06);
+    border: 1px solid rgba(0, 255, 209, 0.25);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--delinea-cyan);
+    letter-spacing: 0.3px;
+  }
+
+  .identity-pill .pill-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--delinea-cyan);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .deployment-row {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border-subtle);
+    width: 100%;
+  }
+
+  .deployment-row span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .deployment-row span::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--delinea-green);
+    opacity: 0.7;
+  }
+
+  .product-card {
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.5) 0%, rgba(12, 16, 42, 0.5) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 28px 24px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+  }
+
+  .product-card::after {
+    content: '→';
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+    color: var(--text-muted);
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+  }
+
+  .product-card:hover {
+    border-color: var(--delinea-cyan);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.8) 0%, rgba(12, 16, 42, 0.8) 100%);
+    box-shadow: 0 12px 32px rgba(0, 255, 209, 0.1);
+  }
+
+  .product-card:hover::after {
+    color: var(--delinea-cyan);
+    transform: translateX(4px);
+  }
+
+  .product-card.active {
+    border-color: var(--delinea-cyan);
+    background: linear-gradient(135deg, rgba(0, 255, 209, 0.1) 0%, rgba(35, 21, 86, 0.6) 100%);
+    box-shadow: 0 0 0 1px var(--delinea-cyan), 0 12px 32px rgba(0, 255, 209, 0.18);
+  }
+
+  .product-card.active::after {
+    color: var(--delinea-cyan);
+    transform: rotate(90deg);
+  }
+
+  .product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(0, 255, 209, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--delinea-cyan);
+  }
+
+  .product-icon svg { width: 24px; height: 24px; }
+
+  .product-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+
+  .product-card .product-short {
+    font-size: 13px;
+    color: var(--delinea-cyan);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .product-card .product-tag {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: auto;
+    padding-right: 28px;
+  }
+
+  /* === Product Detail Panel === */
+  .product-detail {
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.4) 0%, rgba(12, 16, 42, 0.6) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 18px;
+    padding: 48px;
+    min-height: 360px;
+    transition: opacity 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-detail.fading { opacity: 0; }
+
+  .product-detail-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 17px;
+    min-height: 280px;
+  }
+
+  .product-detail-empty .arrow-up {
+    display: block;
+    font-size: 28px;
+    color: var(--delinea-cyan);
+    margin-bottom: 12px;
+  }
+
+  .product-detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .product-detail-header .big-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0, 255, 209, 0.18) 0%, rgba(0, 255, 89, 0.1) 100%);
+    border: 1px solid rgba(0, 255, 209, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--delinea-cyan);
+    flex-shrink: 0;
+  }
+
+  .product-detail-header .big-icon svg { width: 28px; height: 28px; }
+
+  .product-detail-header h4 {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .product-detail-header .tagline {
+    font-size: 16px;
+    color: var(--delinea-cyan);
+    font-weight: 600;
+  }
+
+  .product-solves {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 32px;
+    max-width: 760px;
+  }
+
+  .components-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 980px) { .components-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .components-grid { grid-template-columns: 1fr; } }
+
+  .component-card {
+    background: rgba(12, 16, 42, 0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: all 0.2s ease;
+  }
+
+  .component-card:hover {
+    border-color: rgba(0, 255, 209, 0.4);
+    background: rgba(12, 16, 42, 0.7);
+  }
+
+  .component-card .check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(0, 255, 89, 0.15);
+    color: var(--delinea-green);
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .component-card h5 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+
+  .component-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .product-value {
+    background: linear-gradient(135deg, rgba(0, 255, 89, 0.08) 0%, rgba(0, 255, 209, 0.04) 100%);
+    border: 1px solid rgba(0, 255, 89, 0.22);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .product-value .v-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--delinea-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--delinea-midnight);
+  }
+
+  .product-value-text .v-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--delinea-green);
+    margin-bottom: 4px;
+  }
+
+  .product-value-text p {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 720px) {
+    .product-detail { padding: 32px 24px; }
+  }
+
+  /* === Section Generic === */
+  section.content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 32px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-label {
+    display: inline-block;
+    color: var(--delinea-green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* === Role Cards === */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 980px) { .role-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .role-grid { grid-template-columns: 1fr; } }
+
+  .role-card {
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.5) 0%, rgba(12, 16, 42, 0.5) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .role-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--delinea-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .role-card:hover {
+    border-color: var(--delinea-green);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.8) 0%, rgba(12, 16, 42, 0.8) 100%);
+  }
+
+  .role-card:hover::before { transform: scaleX(1); }
+
+  .role-card.active {
+    border-color: var(--delinea-green);
+    background: linear-gradient(135deg, rgba(0, 255, 89, 0.1) 0%, rgba(35, 21, 86, 0.6) 100%);
+    box-shadow: 0 0 0 1px var(--delinea-green), 0 12px 32px rgba(0, 255, 89, 0.15);
+  }
+
+  .role-card.active::before { transform: scaleX(1); }
+
+  .role-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(0, 255, 89, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--delinea-green);
+  }
+
+  .role-icon svg { width: 22px; height: 22px; }
+
+  .role-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+
+  .role-card p.role-tag {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* === Role Detail Panel === */
+  .role-detail {
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.4) 0%, rgba(12, 16, 42, 0.6) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 18px;
+    padding: 48px;
+    min-height: 420px;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .role-detail.fading { opacity: 0; }
+
+  .role-detail-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 17px;
+  }
+
+  .role-detail-empty .arrow-up {
+    display: block;
+    font-size: 28px;
+    color: var(--delinea-green);
+    margin-bottom: 12px;
+  }
+
+  .role-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  @media (max-width: 860px) {
+    .role-detail { padding: 32px 24px; }
+    .role-detail-content { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .role-detail-content h4 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .role-detail-content .subtitle {
+    color: var(--delinea-green);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .detail-block {
+    margin-bottom: 28px;
+  }
+
+  .detail-block .label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .detail-list {
+    list-style: none;
+  }
+
+  .detail-list li {
+    padding: 10px 0 10px 24px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .detail-list li:last-child { border-bottom: none; }
+
+  .detail-list li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 18px;
+    width: 6px;
+    height: 6px;
+    background: var(--delinea-green);
+    border-radius: 50%;
+  }
+
+  .capability-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .capability-pill {
+    background: rgba(0, 255, 89, 0.1);
+    border: 1px solid rgba(0, 255, 89, 0.3);
+    color: var(--delinea-green);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .outcome-card {
+    background: linear-gradient(135deg, rgba(0, 255, 89, 0.08) 0%, rgba(0, 255, 209, 0.04) 100%);
+    border: 1px solid rgba(0, 255, 89, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* === Scenario Section === */
+  .scenario-divider {
+    background: linear-gradient(180deg, transparent 0%, rgba(35, 21, 86, 0.4) 100%);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .scenario-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 880px) { .scenario-tabs { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .scenario-tabs { grid-template-columns: 1fr; } }
+
+  .scenario-tab {
+    background: rgba(35, 21, 86, 0.4);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    color: var(--text-primary);
+  }
+
+  .scenario-tab:hover {
+    border-color: var(--delinea-green);
+    background: rgba(35, 21, 86, 0.7);
+  }
+
+  .scenario-tab.active {
+    border-color: var(--delinea-green);
+    background: rgba(0, 255, 89, 0.08);
+  }
+
+  .scenario-tab .tab-num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--delinea-green);
+    margin-bottom: 6px;
+  }
+
+  .scenario-tab .tab-title {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  /* === Walkthrough === */
+  .walkthrough-frame {
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.4) 0%, rgba(12, 16, 42, 0.6) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .walkthrough-header {
+    padding: 32px 40px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .walkthrough-header h3 {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .walkthrough-header p {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .step-counter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  .step-counter .current {
+    color: var(--delinea-green);
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  .progress-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--delinea-green) 0%, var(--delinea-cyan) 100%);
+    width: 20%;
+    transition: width 0.4s ease;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 360px;
+  }
+
+  @media (max-width: 760px) {
+    .timeline-grid { grid-template-columns: 1fr; }
+  }
+
+  .timeline-col {
+    padding: 36px 32px;
+    position: relative;
+  }
+
+  .timeline-col.without {
+    background: linear-gradient(180deg, rgba(255, 77, 109, 0.06) 0%, transparent 100%);
+    border-right: 1px solid var(--border-subtle);
+  }
+
+  .timeline-col.with {
+    background: linear-gradient(180deg, rgba(0, 255, 89, 0.06) 0%, transparent 100%);
+  }
+
+  @media (max-width: 760px) {
+    .timeline-col.without { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  }
+
+  .timeline-col-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .timeline-col-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .timeline-col.without .dot { background: var(--delinea-red); }
+  .timeline-col.with .dot { background: var(--delinea-green); }
+
+  .timeline-col-header h4 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .timeline-col.without h4 { color: var(--delinea-red); }
+  .timeline-col.with h4 { color: var(--delinea-green); }
+
+  .step-content {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .step-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-meta {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .step-detail {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .step-tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .timeline-col.without .step-tag {
+    background: rgba(255, 77, 109, 0.15);
+    color: var(--delinea-red);
+  }
+
+  .timeline-col.with .step-tag {
+    background: rgba(0, 255, 89, 0.15);
+    color: var(--delinea-green);
+  }
+
+  .walkthrough-controls {
+    padding: 24px 40px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary {
+    background: var(--delinea-green);
+    color: var(--delinea-midnight);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 255, 89, 0.25);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    border-color: var(--delinea-green);
+    color: var(--delinea-green);
+  }
+
+  .btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-arrow { display: inline-block; margin-left: 6px; }
+
+  /* === Outcome Banner === */
+  .outcome-banner {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(0, 255, 89, 0.1) 0%, rgba(0, 255, 209, 0.04) 100%);
+    border: 1px solid rgba(0, 255, 89, 0.3);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .outcome-banner.visible { display: flex; }
+
+  .outcome-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--delinea-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--delinea-midnight);
+  }
+
+  .outcome-text h5 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .outcome-text p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* === CTA === */
+  .cta-section {
+    text-align: center;
+    padding: 100px 32px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .cta-section p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    margin-bottom: 36px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-large {
+    padding: 16px 32px;
+    font-size: 15px;
+  }
+
+  /* === Footer === */
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+
+  footer a:hover { color: var(--delinea-green); }
+
+  /* === Real World Pattern Badge === */
+  .real-world-pattern {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 7px 14px;
+    background: rgba(255, 127, 73, 0.1);
+    border: 1px solid rgba(255, 127, 73, 0.28);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--delinea-orange);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .real-world-pattern .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--delinea-orange);
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 127, 73, 0.55); }
+    50% { box-shadow: 0 0 0 8px rgba(255, 127, 73, 0); }
+  }
+
+  /* === ATT&CK + Control Tags === */
+  .step-tag-row {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .step-attack-tag, .step-control-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 11px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+
+  .step-attack-tag {
+    background: rgba(255, 77, 109, 0.12);
+    color: var(--delinea-red);
+    border: 1px solid rgba(255, 77, 109, 0.28);
+  }
+
+  .step-control-tag {
+    background: rgba(0, 255, 89, 0.1);
+    color: var(--delinea-green);
+    border: 1px solid rgba(0, 255, 89, 0.28);
+  }
+
+  .step-attack-tag .tag-glyph,
+  .step-control-tag .tag-glyph {
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  /* === Scoreboard === */
+  .scoreboard {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(35, 21, 86, 0.5) 0%, rgba(12, 16, 42, 0.7) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 18px;
+    padding: 48px 40px;
+    display: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scoreboard.visible {
+    display: block;
+    animation: scoreboardReveal 0.7s ease;
+  }
+
+  @keyframes scoreboardReveal {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scoreboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--delinea-green) 50%, transparent 100%);
+  }
+
+  .scoreboard-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .scoreboard-label {
+    display: inline-block;
+    color: var(--delinea-green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .scoreboard-title {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .scoreboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 720px) {
+    .scoreboard-grid { grid-template-columns: 1fr; }
+    .scoreboard { padding: 32px 24px; }
+  }
+
+  .score-card {
+    background: rgba(12, 16, 42, 0.55);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 26px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .score-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--delinea-green);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .score-metric {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .score-without {
+    font-size: clamp(18px, 2.6vw, 24px);
+    font-weight: 900;
+    color: var(--delinea-red);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    text-decoration: line-through;
+    text-decoration-color: rgba(255, 77, 109, 0.5);
+    text-decoration-thickness: 2px;
+    margin-bottom: 6px;
+  }
+
+  .score-without-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 77, 109, 0.7);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .score-arrow {
+    margin: 16px auto;
+    color: var(--delinea-green);
+    opacity: 0.7;
+  }
+
+  .score-with {
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 900;
+    color: var(--delinea-green);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .score-with-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--delinea-green);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .scoreboard-footer {
+    text-align: center;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .scoreboard-footer .footer-eyebrow {
+    color: var(--delinea-green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .scoreboard-footer h4 {
+    font-size: clamp(18px, 2.4vw, 22px);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .scoreboard-footer p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Fade animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero > * { animation: fadeUp 0.7s ease backwards; }
+  .hero .eyebrow { animation-delay: 0s; }
+  .hero h1 { animation-delay: 0.1s; }
+  .hero p.lede { animation-delay: 0.2s; }
+  .hero-stats { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">D</span>
+      <span>Delinea Platform</span>
+    </a>
+    <nav class="top-nav">
+      <a href="#roles">By Role</a>
+      <a href="#platform">Platform</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#next" class="nav-cta">Book a Follow-up</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">Post-Demo Recap</span>
+    <h1>Identity is the new perimeter. <span class="accent">Make it your strongest.</span></h1>
+    <p class="lede">
+      Thank you for taking the time to see the Delinea Platform in action. This interactive tour is designed to help you and your team explore why centralized, intelligent privileged access matters — tailored to your role, with real-world scenarios you can share internally.
+    </p>
+    <div class="hero-stat-pill">
+      <span class="hero-stat-num">99.995%</span>
+      <span class="hero-stat-sep"></span>
+      <span class="hero-stat-text">Platform uptime — deployed in weeks, not months</span>
+    </div>
+  </section>
+
+  <!-- Role Tour -->
+  <section class="content" id="roles">
+    <div class="section-header">
+      <span class="section-label">Step 1 — Choose Your Lens</span>
+      <h2>What does the Delinea Platform mean for your role?</h2>
+      <p>Pick the perspective that matches your day-to-day. We'll show you the priorities, capabilities, and outcomes that matter most to people in your seat.</p>
+    </div>
+
+    <div class="role-grid" id="roleGrid"><!-- populated via JS --></div>
+
+    <div class="role-detail" id="roleDetail">
+      <div class="role-detail-empty">
+        <div>
+          <span class="arrow-up">↑</span>
+          Select a role above to see what matters most.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Products -->
+  <section class="content" id="platform">
+    <div class="section-header">
+      <span class="section-label">Step 2 — Meet the Platform</span>
+      <h2>Visibility. Posture. Control.</h2>
+      <p>Three pillars working as one continuous loop — powered by Iris AI. Across every identity type and every environment, the Delinea Platform unifies discovery, risk analysis, and access control. Click a pillar to explore.</p>
+    </div>
+
+    <div class="identity-coverage">
+      <div class="identity-coverage-label">Across every identity type</div>
+      <div class="identity-pills">
+        <span class="identity-pill"><span class="pill-dot"></span>Workforce</span>
+        <span class="identity-pill"><span class="pill-dot"></span>IT Admin</span>
+        <span class="identity-pill"><span class="pill-dot"></span>Developer</span>
+        <span class="identity-pill"><span class="pill-dot"></span>Machine</span>
+        <span class="identity-pill"><span class="pill-dot"></span>AI</span>
+      </div>
+      <div class="deployment-row">
+        <span>Cloud</span>
+        <span>On-premise</span>
+        <span>Modern Stack</span>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"><!-- populated via JS --></div>
+
+    <div class="product-detail" id="productDetail">
+      <div class="product-detail-empty">
+        <div>
+          <span class="arrow-up">↑</span>
+          Select a product above to see what's inside.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenario Walkthrough -->
+  <section class="scenario-divider">
+    <div class="content" id="scenarios">
+      <div class="section-header">
+        <span class="section-label">Step 3 — See It In Action</span>
+        <h2>Same attack. Two very different outcomes.</h2>
+        <p>Choose a real-world scenario and walk through what happens step by step — first without a modern PAM platform, then with Delinea in place. The difference is the story your incident response team gets to tell.</p>
+      </div>
+
+      <div class="scenario-tabs" id="scenarioTabs"><!-- populated via JS --></div>
+
+      <div class="walkthrough-frame">
+        <div class="walkthrough-header">
+          <div>
+            <h3 id="scenarioTitle">Phished Contractor Credentials</h3>
+            <p id="scenarioDesc">A common third-party access compromise — and how identity-first security changes the outcome.</p>
+            <div class="real-world-pattern" id="scenarioPattern">
+              <span class="pulse"></span>
+              <span id="scenarioPatternText">The pattern behind most third-party vendor compromises</span>
+            </div>
+          </div>
+          <div class="step-counter">
+            <span>Step</span>
+            <span class="current" id="stepCurrent">1</span>
+            <span>of</span>
+            <span id="stepTotal">5</span>
+          </div>
+        </div>
+
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+        <div class="timeline-grid">
+          <div class="timeline-col without">
+            <div class="timeline-col-header">
+              <span class="dot"></span>
+              <h4>Without Modern PAM</h4>
+            </div>
+            <div class="step-content visible" id="withoutContent">
+              <div class="step-meta" id="withoutMeta">T+0 minutes</div>
+              <div class="step-title" id="withoutTitle">—</div>
+              <div class="step-detail" id="withoutDetail">—</div>
+              <div class="step-tag-row">
+                <span class="step-attack-tag" id="withoutAttack">
+                  <span class="tag-glyph">⚔</span>
+                  <span id="withoutAttackText">MITRE ATT&CK</span>
+                </span>
+              </div>
+              <span class="step-tag" id="withoutTag">Risk Open</span>
+            </div>
+          </div>
+
+          <div class="timeline-col with">
+            <div class="timeline-col-header">
+              <span class="dot"></span>
+              <h4>With Delinea Platform</h4>
+            </div>
+            <div class="step-content visible" id="withContent">
+              <div class="step-meta" id="withMeta">T+0 minutes</div>
+              <div class="step-title" id="withTitle">—</div>
+              <div class="step-detail" id="withDetail">—</div>
+              <div class="step-tag-row">
+                <span class="step-control-tag" id="withControl">
+                  <span class="tag-glyph">🛡</span>
+                  <span id="withControlText">Delinea Control</span>
+                </span>
+              </div>
+              <span class="step-tag" id="withTag">Contained</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walkthrough-controls">
+          <button class="btn btn-secondary" id="prevStep" disabled>← Previous</button>
+          <button class="btn btn-primary" id="nextStep">Next Step <span class="btn-arrow">→</span></button>
+        </div>
+      </div>
+
+      <div class="scoreboard" id="outcomeBanner">
+        <div class="scoreboard-header">
+          <span class="scoreboard-label">The Final Tally</span>
+          <div class="scoreboard-title" id="scoreboardTitle">Same attacker. Same playbook. Two very different endings.</div>
+        </div>
+        <div class="scoreboard-grid" id="scoreboardGrid"><!-- populated via JS --></div>
+        <div class="scoreboard-footer">
+          <span class="footer-eyebrow">The bottom line</span>
+          <h4 id="outcomeTitle">—</h4>
+          <p id="outcomeBody">—</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="next">
+    <h2>Ready for the next step?</h2>
+    <p>Bring this back to your team. We can run a deeper technical session, scope a Proof-of-Value tailored to your environment, or share customer references in your industry.</p>
+    <div class="cta-buttons">
+      <a href="https://delinea.com/contact" class="btn btn-primary btn-large">Book a Follow-up</a>
+      <a href="https://delinea.com/resources" class="btn btn-secondary btn-large">Explore More Resources</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>
+    <a href="https://delinea.com">delinea.com</a>
+    <a href="https://linkedin.com/company/delinea/">LinkedIn</a>
+    <a href="https://x.com/delineainc">X</a>
+    <a href="https://youtube.com/@Delinea">YouTube</a>
+  </div>
+  <p style="margin-top:16px;">© Delinea. Pioneering identity security for the modern enterprise.</p>
+</footer>
+
+<script>
+/* === Role data === */
+const roles = [
+  {
+    id: 'ciso',
+    title: 'CISO',
+    tag: 'Security leadership & risk',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6l-8-4z"></path></svg>`,
+    headline: 'Reduce the blast radius of your most likely breach.',
+    subtitle: 'For the security leader',
+    priorities: [
+      'Reduce the risk of credential-based breaches — the #1 attack vector',
+      'Demonstrate measurable control to the board and auditors',
+      'Tame identity sprawl across human, machine, and AI agents',
+      'Get ahead of regulatory exposure (SEC, DORA, NIS2)'
+    ],
+    capabilities: ['Identity Threat Protection', 'Risk-based access', 'Executive dashboards', 'Board-ready reporting', 'Zero Trust enforcement'],
+    outcome: 'A unified view of every privileged identity and a defensible story for the board: you know who has access to what, why, and what they did with it.'
+  },
+  {
+    id: 'architect',
+    title: 'Security Architect',
+    tag: 'Zero Trust & integrations',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`,
+    headline: 'Design identity-first security without rip-and-replace.',
+    subtitle: 'For the security architect',
+    priorities: [
+      'Operationalize Zero Trust on a foundation of verified identity',
+      'Cover the full identity surface — humans, services, agents, NHIs',
+      'Integrate cleanly with existing IdP, SIEM, ITSM, and ticketing',
+      'Scale across hybrid, multi-cloud, and on-prem without silos'
+    ],
+    capabilities: ['Just-in-Time access', 'Granular least privilege', 'Secret management', 'Open APIs', 'IdP/SIEM/ITSM integrations', 'Cloud-native'],
+    outcome: 'A modern PAM architecture that fits the stack you already have — and gives you the building blocks to enforce least privilege everywhere identity touches.'
+  },
+  {
+    id: 'itops',
+    title: 'IT Operations',
+    tag: 'Efficiency & automation',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`,
+    headline: 'Spend less time on credential toil. More time on real work.',
+    subtitle: 'For IT operations',
+    priorities: [
+      'Eliminate manual password rotation and reset tickets',
+      'Streamline server, database, and cloud access management',
+      'Give engineers self-service privileged access with guardrails',
+      'Automate workflows across the access lifecycle'
+    ],
+    capabilities: ['Automated rotation', 'Self-service requests', 'Session management', 'Workflow automation', 'API-first', 'Fast deployment'],
+    outcome: 'Reclaim engineering hours and shrink ticket queues. Your team stops being the bottleneck for access, and security still gets the controls it needs.'
+  },
+  {
+    id: 'compliance',
+    title: 'Compliance Lead',
+    tag: 'Audit & frameworks',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line><line x1="9" y1="11" x2="15" y2="11"></line></svg>`,
+    headline: 'Pass audits with less prep. Reduce findings to near-zero.',
+    subtitle: 'For compliance & audit',
+    priorities: [
+      'Demonstrate continuous control over privileged access',
+      'Map controls to SOX, PCI-DSS, HIPAA, NIST, ISO, DORA, NIS2',
+      'Generate audit-ready evidence without manual collection',
+      'Prove access reviews and attestations are happening on schedule'
+    ],
+    capabilities: ['Session recording', 'Immutable audit logs', 'Attestation workflows', 'Control mapping', 'Compliance reports', 'Policy enforcement'],
+    outcome: 'When the auditor asks "show me," you have it. Continuous evidence collection means audit prep goes from quarters to days, and findings drop dramatically.'
+  }
+];
+
+/* === Scenario data === */
+const scenarios = [
+  {
+    id: 'phishing',
+    title: 'Phished Contractor Credentials',
+    desc: 'A common third-party access compromise — and how identity-first security changes the outcome.',
+    pattern: 'The pattern behind most third-party vendor compromises',
+    steps: [
+      {
+        time: 'T+0 minutes',
+        without: {
+          title: 'The bait works',
+          detail: 'A contractor receives a convincing phishing email and enters their credentials on a fake portal. The attacker now has valid login info.',
+          attack: 'T1566.002 — Spearphishing Link'
+        },
+        with: {
+          title: 'The bait still works — but it doesn\'t matter',
+          detail: 'The same phishing succeeds, but the contractor\'s account has no standing privileged access. Stolen credentials alone unlock nothing critical.',
+          control: 'Just-in-Time Access'
+        }
+      },
+      {
+        time: 'T+10 minutes',
+        without: {
+          title: 'Easy front-door entry',
+          detail: 'The attacker logs in over VPN with the valid credentials. No additional MFA challenge for general network access. They\'re in.',
+          attack: 'T1078 — Valid Accounts'
+        },
+        with: {
+          title: 'Adaptive friction at every step',
+          detail: 'Any attempt to reach a privileged target is brokered through Delinea, requiring MFA, contextual risk checks, and a justified, time-bound access request.',
+          control: 'Adaptive MFA + Session Brokering'
+        }
+      },
+      {
+        time: 'T+45 minutes',
+        without: {
+          title: 'Shared admin password discovered',
+          detail: 'On a file share, the attacker finds a spreadsheet with shared admin passwords — common in environments without proper vaulting.',
+          attack: 'T1552.001 — Credentials in Files'
+        },
+        with: {
+          title: 'Nothing left lying around',
+          detail: 'Credentials live in the Delinea vault. They\'re rotated automatically and checked out per session. There are no shared passwords on file shares to find.',
+          control: 'Centralized Vault + Auto-rotation'
+        }
+      },
+      {
+        time: 'T+2 hours',
+        without: {
+          title: 'Lateral movement begins',
+          detail: 'Using the shared admin password, the attacker hops between critical systems. Logs look normal — it\'s just an admin doing admin things.',
+          attack: 'T1021 — Remote Services'
+        },
+        with: {
+          title: 'Anomalous behavior flagged',
+          detail: 'Unusual time, geo, and target patterns push the risk score over threshold. The session is automatically terminated, credentials rotated, and the SOC alerted in real time.',
+          control: 'Behavioral Analytics + Risk Scoring'
+        }
+      },
+      {
+        time: 'Days later',
+        without: {
+          title: 'Discovery via outside notification',
+          detail: 'Three weeks later, a partner reports your data on a leak site. Forensics take months. The breach makes headlines.',
+          attack: 'T1567 — Exfiltration to Web Service'
+        },
+        with: {
+          title: 'Forensics in minutes, not months',
+          detail: 'Full session recording and immutable audit logs make root cause analysis a 30-minute task. Blast radius: contained to zero.',
+          control: 'Session Recording + Immutable Audit'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time to Detection', without: '21 days', with: '< 60 sec' },
+      { metric: 'Systems Compromised', without: '14', with: '0' },
+      { metric: 'Records Exposed', without: '2.3M', with: '0' }
+    ],
+    outcome: {
+      title: 'Same attacker. Same phish. Different ending.',
+      body: 'The first version is a public breach. The second is a Tuesday. Identity-first PAM moves the win condition from "block every phish" (impossible) to "make the phish worthless" (achievable).'
+    }
+  },
+  {
+    id: 'laptop',
+    title: 'Stolen Admin Laptop',
+    desc: 'An endpoint with privileged access goes missing. What an attacker can do with it changes everything.',
+    pattern: 'The pattern behind most lost-device and endpoint-origin breaches',
+    steps: [
+      {
+        time: 'T+0',
+        without: {
+          title: 'Laptop disappears',
+          detail: 'A senior admin\'s laptop is stolen from their car. It contains cached credentials, browser-saved passwords, and SSH private keys.',
+          attack: 'Physical Access — Initial Foothold'
+        },
+        with: {
+          title: 'Laptop disappears, attack surface doesn\'t',
+          detail: 'The same laptop is stolen. But there are no SSH keys on disk, no cached domain admin credentials, and no browser-saved passwords for production systems.',
+          control: 'Endpoint Privilege Management'
+        }
+      },
+      {
+        time: 'T+1 hour',
+        without: {
+          title: 'Local admin extracts secrets',
+          detail: 'The attacker boots into recovery, has full local admin, and pulls out browser-saved creds, cached Kerberos tickets, and SSH keys.',
+          attack: 'T1003 — OS Credential Dumping'
+        },
+        with: {
+          title: 'Endpoint privilege bounded',
+          detail: 'Privilege Manager removes standing local admin. Even with physical access, escalation paths are policy-controlled. Sensitive secrets are vaulted, not on disk.',
+          control: 'Application Control + Least Privilege'
+        }
+      },
+      {
+        time: 'T+3 hours',
+        without: {
+          title: 'SSH keys still work',
+          detail: 'The attacker uses the stolen private keys to connect to production servers. Keys have no expiration; they\'re trusted as long as they exist.',
+          attack: 'T1021.004 — SSH Lateral Movement'
+        },
+        with: {
+          title: 'Brokered, ephemeral sessions',
+          detail: 'Server access is brokered per-session through Delinea. There are no long-lived static keys to steal — just short-lived, MFA-bound sessions.',
+          control: 'Session Brokering + Ephemeral Credentials'
+        }
+      },
+      {
+        time: 'T+8 hours',
+        without: {
+          title: 'Persistence established',
+          detail: 'The attacker creates new local admin accounts on critical servers and disables logging, ensuring they can return later.',
+          attack: 'T1136 — Create Account'
+        },
+        with: {
+          title: 'Account creation flagged automatically',
+          detail: 'Account Lifecycle Manager continuously discovers privileged accounts. Any new admin account triggers an alert and a justification workflow before it can be used.',
+          control: 'Account Lifecycle Manager'
+        }
+      },
+      {
+        time: 'Next morning',
+        without: {
+          title: 'Loss reported — too late',
+          detail: 'The admin reports the theft. IT begins a manual scramble to rotate credentials, but the damage is already done across dozens of systems.',
+          attack: 'Manual Response Lag'
+        },
+        with: {
+          title: 'One-click revocation',
+          detail: 'The admin\'s tokens are revoked centrally; active sessions terminated; vault checkouts invalidated. The window of exposure ends with one action.',
+          control: 'Centralized Revocation'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time to Revoke All Access', without: '~3 days', with: '< 2 min' },
+      { metric: 'Sensitive Data on Disk', without: '~40 GB', with: '0 GB' },
+      { metric: 'Persistent Backdoors', without: '6 servers', with: '0' }
+    ],
+    outcome: {
+      title: 'A stolen laptop should be an inconvenience, not a crisis.',
+      body: 'When standing privilege is removed and credentials are brokered just-in-time, the value of any single endpoint to an attacker collapses. Lost laptops become a hardware problem, not a security incident.'
+    }
+  },
+  {
+    id: 'insider',
+    title: 'Insider Threat — Departing Admin',
+    desc: 'A trusted senior admin with full access decides to take something on the way out the door.',
+    pattern: 'The pattern behind most insider exfiltration and missed-deprovisioning incidents',
+    steps: [
+      {
+        time: 'Day 1',
+        without: {
+          title: 'Notice given, access unchanged',
+          detail: 'A senior admin is told they\'re being let go but stays on for a 2-week notice period — with full standing access to everything.',
+          attack: 'T1098 — Account Manipulation Risk'
+        },
+        with: {
+          title: 'Access tightened automatically',
+          detail: 'Once flagged in the HRIS, the admin\'s access is narrowed: standing privileges revoked, every elevated session now requires fresh approval and is recorded.',
+          control: 'HRIS-Triggered Access Reduction'
+        }
+      },
+      {
+        time: 'Day 4',
+        without: {
+          title: 'Quiet exfiltration',
+          detail: 'Using normal admin access, the user copies sensitive customer data to a personal cloud account. Nothing trips an alarm — they have the rights to do it.',
+          attack: 'T1005 — Data from Local System'
+        },
+        with: {
+          title: 'Behavioral anomalies flagged',
+          detail: 'AI-driven analytics detect deviation from baseline: unusual data access volumes, off-hours activity, and movement to external destinations. The session is paused for review.',
+          control: 'UEBA + Risk-Based Session Control'
+        }
+      },
+      {
+        time: 'Day 8',
+        without: {
+          title: 'Backdoor planted',
+          detail: 'The admin creates a service account named to look routine. It has broad permissions, won\'t expire, and isn\'t tied to their identity.',
+          attack: 'T1136.002 — Create Domain Account'
+        },
+        with: {
+          title: 'Rogue accounts auto-discovered',
+          detail: 'The new service account is detected within minutes. Its creation lacks an approved change ticket; it\'s flagged, scoped, and reviewed before it can be used.',
+          control: 'Continuous Account Discovery'
+        }
+      },
+      {
+        time: 'Day 14 — Departure',
+        without: {
+          title: 'Manual offboarding misses things',
+          detail: 'HR triggers offboarding. IT disables their primary account but misses the service account, a few SSH keys, and an API token. Risk persists.',
+          attack: 'T1098.004 — SSH Authorized Keys'
+        },
+        with: {
+          title: 'Automated, complete deprovisioning',
+          detail: 'Departure event in HRIS triggers full revocation: every account, key, secret, and active session tied to the user is invalidated automatically across all systems.',
+          control: 'Identity Lifecycle Automation'
+        }
+      },
+      {
+        time: 'Months later',
+        without: {
+          title: 'Discovered in audit',
+          detail: 'A routine audit finds the orphan service account. By then, data has been accessed externally for months. Attribution is hard; legal exposure is real.',
+          attack: 'T1078 — Valid Accounts (Lingering)'
+        },
+        with: {
+          title: 'Discovered in 90 seconds',
+          detail: 'Session recordings, immutable logs, and behavioral baselines make malicious intent provable in real time. Most insider attempts never reach completion.',
+          control: 'Continuous Audit + Forensic Recording'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time to Detection', without: '4 months', with: 'Same day' },
+      { metric: 'Orphan Accounts Left Active', without: '6', with: '0' },
+      { metric: 'Records Exfiltrated', without: '~150K', with: '0' }
+    ],
+    outcome: {
+      title: 'Trust your people — verify everything else.',
+      body: 'Insider threats are uniquely hard because the actor has legitimate credentials. The Delinea Platform shifts the equation: every privileged action is observable, scoped, and reversible — making insider misuse hard to execute and impossible to hide.'
+    }
+  },
+  {
+    id: 'service-account',
+    title: 'Compromised Service Account',
+    desc: 'A non-human identity gets breached. These accounts are everywhere — and most enterprises can\'t even count them.',
+    pattern: 'The pattern behind most CI/CD pipeline and Git-leak breaches',
+    steps: [
+      {
+        time: 'Years before',
+        without: {
+          title: 'Hardcoded and forgotten',
+          detail: 'A service account password was set in 2022 and embedded in a legacy app\'s config file. It\'s never been rotated. Nobody remembers who owns it.',
+          attack: 'CWE-798 — Hardcoded Credentials'
+        },
+        with: {
+          title: 'Vaulted, rotated, scoped',
+          detail: 'Service credentials are managed in the Delinea vault. Apps retrieve them at runtime via short-lived tokens; rotation is automatic; ownership is tracked.',
+          control: 'DevOps Secrets Vault'
+        }
+      },
+      {
+        time: 'T+0',
+        without: {
+          title: 'Credential leaks',
+          detail: 'A junior engineer accidentally commits the config file to a public GitHub repo. The static password is now searchable on the open internet.',
+          attack: 'T1552.004 — Private Keys in Repos'
+        },
+        with: {
+          title: 'No static password to leak',
+          detail: 'There is no hardcoded password to commit. The app authenticates to the vault using its own machine identity. Even a leaked config exposes nothing usable.',
+          control: 'Workload Identity + Secret-less Auth'
+        }
+      },
+      {
+        time: 'T+2 hours',
+        without: {
+          title: 'Attacker logs in',
+          detail: 'A bot scraping GitHub finds the credentials. Within hours, the attacker is using them to query production databases. The account has accumulated wide permissions over years.',
+          attack: 'T1078.004 — Cloud Valid Accounts'
+        },
+        with: {
+          title: 'Least privilege enforced',
+          detail: 'Service accounts are scoped to exactly what they need. Permissions are reviewed regularly; entitlement creep is detected and right-sized automatically.',
+          control: 'Cloud Entitlement Management'
+        }
+      },
+      {
+        time: 'T+1 day',
+        without: {
+          title: 'Hidden in plain sight',
+          detail: 'Activity looks like a legitimate scheduled job. There\'s no MFA on service accounts, no anomaly detection — and the attacker quietly exfiltrates data for weeks.',
+          attack: 'T1036 — Masquerading'
+        },
+        with: {
+          title: 'Behavioral baseline catches the outlier',
+          detail: 'Any deviation in source, timing, or query pattern triggers an alert. Even a "valid" credential used abnormally is treated as suspect. The session is cut and flagged.',
+          control: 'NHI Behavioral Analytics'
+        }
+      },
+      {
+        time: 'After detection',
+        without: {
+          title: 'A 90-day breach window',
+          detail: 'The breach is discovered three months later via an unrelated investigation. By then the data is everywhere. The static password is still floating around.',
+          attack: 'Long Dwell — No Rotation'
+        },
+        with: {
+          title: 'Minutes of exposure, not months',
+          detail: 'Automatic rotation means even a leaked credential has a tiny window of validity. Combined with detection, the exposure window collapses from months to minutes.',
+          control: 'Auto-rotation + Anomaly Detection'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Credential Validity Window', without: '3+ years', with: '< 60 min' },
+      { metric: 'Dwell Time Before Detection', without: '91 days', with: '< 2 hours' },
+      { metric: 'Records at Risk', without: '8.2M', with: '0' }
+    ],
+    outcome: {
+      title: 'Machine identities outnumber humans 45:1. Treat them that way.',
+      body: 'Most enterprises have more service accounts than people — and most of them are unrotated, over-privileged, and unmonitored. The Delinea Platform brings the same rigor to non-human identities as to humans, closing one of the largest gaps in modern security.'
+    }
+  }
+];
+
+/* === Render Roles === */
+const roleGrid = document.getElementById('roleGrid');
+const roleDetail = document.getElementById('roleDetail');
+
+roles.forEach(role => {
+  const card = document.createElement('div');
+  card.className = 'role-card';
+  card.dataset.id = role.id;
+  card.innerHTML = `
+    <div class="role-icon">${role.icon}</div>
+    <h3>${role.title}</h3>
+    <p class="role-tag">${role.tag}</p>
+  `;
+  card.addEventListener('click', () => selectRole(role.id));
+  roleGrid.appendChild(card);
+});
+
+function selectRole(id) {
+  const role = roles.find(r => r.id === id);
+  if (!role) return;
+  document.querySelectorAll('.role-card').forEach(c => c.classList.toggle('active', c.dataset.id === id));
+  roleDetail.classList.add('fading');
+  setTimeout(() => {
+    roleDetail.innerHTML = `
+      <div class="role-detail-content">
+        <div>
+          <div class="subtitle">${role.subtitle}</div>
+          <h4>${role.headline}</h4>
+          <div class="detail-block">
+            <div class="label">What's top of mind</div>
+            <ul class="detail-list">
+              ${role.priorities.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="detail-block">
+            <div class="label">Capabilities that matter</div>
+            <div class="capability-pills">
+              ${role.capabilities.map(c => `<span class="capability-pill">${c}</span>`).join('')}
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="label">The outcome</div>
+            <div class="outcome-card">${role.outcome}</div>
+          </div>
+        </div>
+      </div>
+    `;
+    roleDetail.classList.remove('fading');
+  }, 220);
+}
+
+/* === Product data === */
+const products = [
+  {
+    id: 'visibility',
+    name: 'Visibility',
+    short: 'Pillar 01',
+    tagline: 'Illuminate YOUR identities.',
+    tag: 'Discover and inventory every human, machine, workforce, developer, and AI identity across your stack.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`,
+    solves: 'You can\'t secure what you can\'t see. Most enterprises have no single source of truth for who or what has privileged access — humans, machines, workforce identities, developer accounts, and now AI agents are spread across silos. Visibility brings them all into one continuously-updated picture.',
+    components: [
+      { title: 'Identity Discovery', desc: 'Continuously discover every human, machine, workforce, developer, and AI identity across cloud, on-prem, and modern stack.' },
+      { title: 'Account Inventory', desc: 'A live inventory of every privileged account, secret, and entitlement — always current, never stale.' },
+      { title: 'Identity Graph', desc: 'Map relationships between identities, accounts, and resources to surface real attack paths before attackers do.' },
+      { title: 'AI Agent Discovery', desc: 'Find autonomous agents, copilots, and bots — the fastest-growing and most ungoverned identity class.' },
+      { title: 'Machine Identity Visibility', desc: 'Track service accounts, workload identities, and certificates that humans never see but attackers always find.' },
+      { title: 'Cross-Environment Coverage', desc: 'Cloud, on-premise, hybrid, modern stack — one pane of glass across the entire identity surface.' }
+    ],
+    value: 'Know every identity. See every account. Map every path. The foundation everything else builds on.'
+  },
+  {
+    id: 'posture',
+    name: 'Posture',
+    short: 'Pillar 02',
+    tagline: 'Quantify YOUR Risk.',
+    tag: 'Surface stale accounts, misconfigurations, shadow AI, and over-permissioned identities — ranked by risk.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>`,
+    solves: 'Most security teams know they have identity risk — they just can\'t quantify it or prioritize it. Posture turns identity sprawl into a measurable, ranked picture of risk: stale accounts, misconfigurations, shadow AI, and over-permissioned identities — with concrete remediation guidance, not just findings dumped in a queue.',
+    components: [
+      { title: 'Stale Account Detection', desc: 'Surface dormant accounts and forgotten credentials before attackers find them first.' },
+      { title: 'Misconfiguration Analysis', desc: 'Detect risky configurations across identity providers, access policies, and entitlements.' },
+      { title: 'Shadow AI Discovery', desc: 'Identify ungoverned AI tools and agents using corporate credentials without oversight.' },
+      { title: 'Over-Permissioned Identities', desc: 'Find identities with more access than they need, scored by potential blast radius.' },
+      { title: 'Risk Scoring & Prioritization', desc: 'Continuously rank issues so your team always knows what to fix first.' },
+      { title: 'Remediation Guidance', desc: 'Specific, actionable next steps — not a wall of findings to triage manually.' }
+    ],
+    value: 'Turn identity hygiene from gut feel into measurable, prioritized progress your team can actually act on.'
+  },
+  {
+    id: 'control',
+    name: 'Control',
+    short: 'Pillar 03',
+    tagline: 'Accelerate YOUR Business.',
+    tag: 'Vault credentials, reduce standing privilege, refactor permissions, and enforce policy — automatically.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>`,
+    solves: 'Security and speed are usually a tradeoff — every new control creates a ticket queue. Control breaks that tradeoff with automated enforcement: vault credentials, reduce standing privilege, refactor permissions, and enforce policy at the speed of business — without slowing anyone down.',
+    components: [
+      { title: 'Vault Accounts', desc: 'Centralize every privileged credential, secret, and key in one auditable, brokered location.' },
+      { title: 'Reduce Standing Privilege', desc: 'Replace persistent admin rights with just-in-time, time-bound elevation — the highest-leverage move in PAM.' },
+      { title: 'Refactor Permissions', desc: 'Right-size entitlements automatically based on actual usage, not legacy assumptions.' },
+      { title: 'Enforce Policy', desc: 'Apply consistent access policy across cloud, on-prem, and SaaS — without integration sprawl.' },
+      { title: 'Automated Workflows', desc: 'Approval, provisioning, and deprovisioning all run automatically across the identity lifecycle.' },
+      { title: 'Session Brokering & Recording', desc: 'Every privileged session — brokered, recorded, reviewable, and audit-ready.' }
+    ],
+    value: 'Move fast, safely. Enforce least privilege at the speed of business — automated, audit-ready, and policy-driven.'
+  }
+];
+
+/* === Render Products === */
+const productGrid = document.getElementById('productGrid');
+const productDetail = document.getElementById('productDetail');
+
+products.forEach(product => {
+  const card = document.createElement('div');
+  card.className = 'product-card';
+  card.dataset.id = product.id;
+  card.innerHTML = `
+    <div class="product-icon">${product.icon}</div>
+    <div class="product-short">${product.short}</div>
+    <h3>${product.name}</h3>
+    <p class="product-tag">${product.tag}</p>
+  `;
+  card.addEventListener('click', () => selectProduct(product.id));
+  productGrid.appendChild(card);
+});
+
+function selectProduct(id) {
+  const product = products.find(p => p.id === id);
+  if (!product) return;
+  document.querySelectorAll('.product-card').forEach(c => c.classList.toggle('active', c.dataset.id === id));
+  productDetail.classList.add('fading');
+  setTimeout(() => {
+    productDetail.innerHTML = `
+      <div class="product-detail-header">
+        <div class="big-icon">${product.icon}</div>
+        <div>
+          <h4>${product.name}</h4>
+          <div class="tagline">${product.tagline}</div>
+        </div>
+      </div>
+      <p class="product-solves">${product.solves}</p>
+      <div class="components-label">What's inside</div>
+      <div class="components-grid">
+        ${product.components.map(c => `
+          <div class="component-card">
+            <span class="check">✓</span>
+            <h5>${c.title}</h5>
+            <p>${c.desc}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="product-value">
+        <div class="v-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div class="product-value-text">
+          <div class="v-label">The Outcome</div>
+          <p>${product.value}</p>
+        </div>
+      </div>
+    `;
+    productDetail.classList.remove('fading');
+  }, 220);
+}
+
+/* === Render Scenarios === */
+const scenarioTabs = document.getElementById('scenarioTabs');
+let currentScenario = 0;
+let currentStep = 0;
+
+scenarios.forEach((s, i) => {
+  const tab = document.createElement('button');
+  tab.className = 'scenario-tab' + (i === 0 ? ' active' : '');
+  tab.dataset.idx = i;
+  tab.innerHTML = `
+    <div class="tab-num">SCENARIO 0${i + 1}</div>
+    <div class="tab-title">${s.title}</div>
+  `;
+  tab.addEventListener('click', () => selectScenario(i));
+  scenarioTabs.appendChild(tab);
+});
+
+function selectScenario(idx) {
+  currentScenario = idx;
+  currentStep = 0;
+  document.querySelectorAll('.scenario-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+  document.getElementById('scenarioTitle').textContent = scenarios[idx].title;
+  document.getElementById('scenarioDesc').textContent = scenarios[idx].desc;
+  document.getElementById('scenarioPatternText').textContent = scenarios[idx].pattern;
+  document.getElementById('stepTotal').textContent = scenarios[idx].steps.length;
+  document.getElementById('outcomeBanner').classList.remove('visible');
+  renderStep();
+}
+
+function renderStep() {
+  const sc = scenarios[currentScenario];
+  const step = sc.steps[currentStep];
+  const total = sc.steps.length;
+
+  // Fade out
+  document.getElementById('withoutContent').classList.remove('visible');
+  document.getElementById('withContent').classList.remove('visible');
+
+  setTimeout(() => {
+    document.getElementById('stepCurrent').textContent = currentStep + 1;
+    document.getElementById('progressBar').style.width = `${((currentStep + 1) / total) * 100}%`;
+    document.getElementById('withoutMeta').textContent = step.time;
+    document.getElementById('withoutTitle').textContent = step.without.title;
+    document.getElementById('withoutDetail').textContent = step.without.detail;
+    document.getElementById('withoutAttackText').textContent = step.without.attack;
+    document.getElementById('withMeta').textContent = step.time;
+    document.getElementById('withTitle').textContent = step.with.title;
+    document.getElementById('withDetail').textContent = step.with.detail;
+    document.getElementById('withControlText').textContent = step.with.control;
+    document.getElementById('withoutContent').classList.add('visible');
+    document.getElementById('withContent').classList.add('visible');
+
+    document.getElementById('prevStep').disabled = currentStep === 0;
+    const nextBtn = document.getElementById('nextStep');
+    if (currentStep === total - 1) {
+      nextBtn.innerHTML = 'See the Outcome <span class="btn-arrow">→</span>';
+    } else {
+      nextBtn.innerHTML = 'Next Step <span class="btn-arrow">→</span>';
+    }
+    nextBtn.disabled = false;
+  }, 180);
+}
+
+document.getElementById('nextStep').addEventListener('click', () => {
+  const sc = scenarios[currentScenario];
+  if (currentStep < sc.steps.length - 1) {
+    currentStep++;
+    renderStep();
+  } else {
+    // Show scoreboard outcome
+    const banner = document.getElementById('outcomeBanner');
+    document.getElementById('outcomeTitle').textContent = sc.outcome.title;
+    document.getElementById('outcomeBody').textContent = sc.outcome.body;
+
+    // Build scoreboard cards
+    const grid = document.getElementById('scoreboardGrid');
+    grid.innerHTML = sc.scoreboard.map(s => `
+      <div class="score-card">
+        <div class="score-metric">${s.metric}</div>
+        <div class="score-without-label">Without modern PAM</div>
+        <div class="score-without">${s.without}</div>
+        <div class="score-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        </div>
+        <div class="score-with">${s.with}</div>
+        <div class="score-with-label">With Delinea Platform</div>
+      </div>
+    `).join('');
+
+    banner.classList.add('visible');
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('nextStep').disabled = true;
+  }
+});
+
+document.getElementById('prevStep').addEventListener('click', () => {
+  if (currentStep > 0) {
+    currentStep--;
+    document.getElementById('outcomeBanner').classList.remove('visible');
+    renderStep();
+  }
+});
+
+/* Initialize */
+selectScenario(0);
+</script>
+</body>
+</html>
