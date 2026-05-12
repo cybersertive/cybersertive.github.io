@@ -868,7 +868,7 @@
 
   .scenario-tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-bottom: 40px;
   }
@@ -1489,7 +1489,7 @@
       <a href="#roles">By Role</a>
       <a href="#platform">Platform</a>
       <a href="#scenarios">Scenarios</a>
-      <a href="#next" class="nav-cta">Book a Follow-up</a>
+      <a href="#next" class="nav-cta">Next Steps</a>
     </nav>
   </div>
 </header>
@@ -1499,23 +1499,23 @@
   <!-- Hero -->
   <section class="hero">
     <span class="eyebrow">Post-Demo Recap</span>
-    <h1>Identity is the new perimeter. <span class="accent">Make it your strongest.</span></h1>
+    <h1>Identity is where modern attacks start. <span class="accent">And usually, where they could have ended.</span></h1>
     <p class="lede">
-      Thank you for taking the time to demo the Delinea Platform with Yamna. This interactive tour is designed to help you and your team explore why centralized, intelligent privileged access matters — tailored to your role, with real-world scenarios you can share internally.
+      Thank you for taking the time to demo with Yamna (Solutions Engineer). This page exists for one reason: to give you a story to tell your team about what you saw in the demo. Pick your seat below, walk through a few real scenarios, and decide for yourself whether this is worth a follow-up conversation.
     </p>
     <div class="hero-stat-pill">
       <span class="hero-stat-num">99.995%</span>
       <span class="hero-stat-sep"></span>
-      <span class="hero-stat-text">Platform uptime — deployed in weeks, not months</span>
+      <span class="hero-stat-text">Uptime · live in weeks · built for teams who already have enough tools</span>
     </div>
   </section>
 
   <!-- Role Tour -->
   <section class="content" id="roles">
     <div class="section-header">
-      <span class="section-label">Step 1 — Choose Your Lens</span>
-      <h2>What does the Delinea Platform mean for your role?</h2>
-      <p>Pick the perspective that matches your day-to-day. We'll show you the priorities, capabilities, and outcomes that matter most to people in your seat.</p>
+      <span class="section-label">Step 1 — Pick Your Seat</span>
+      <h2>Who's sitting in the room when you share this?</h2>
+      <p>Identity security touches every seat differently. Pick the one that fits and we'll skip the marketing — here's what actually changes about your work.</p>
     </div>
 
     <div class="role-grid" id="roleGrid"><!-- populated via JS --></div>
@@ -1534,8 +1534,8 @@
   <section class="content" id="platform">
     <div class="section-header">
       <span class="section-label">Step 2 — Meet the Platform</span>
-      <h2>Visibility. Posture. Control.</h2>
-      <p>Three pillars working as one continuous loop — powered by Iris AI. Across every identity type and every environment, the Delinea Platform unifies discovery, risk analysis, and access control. Click a pillar to explore.</p>
+      <h2>Three things. In a particular order.</h2>
+      <p>You can't secure what you can't see. You can't fix what you can't measure. You can't enforce what you can't automate. Visibility, Posture, Control — the order matters. Click each to see what's inside.</p>
     </div>
 
     <div class="identity-coverage">
@@ -1571,8 +1571,8 @@
     <div class="content" id="scenarios">
       <div class="section-header">
         <span class="section-label">Step 3 — See It In Action</span>
-        <h2>Same attack. Two very different outcomes.</h2>
-        <p>Choose a real-world scenario and walk through what happens step by step — first without a modern PAM platform, then with Delinea in place. The difference is the story your incident response team gets to tell.</p>
+        <h2>Six ways this goes wrong. Six ways it doesn't have to.</h2>
+        <p>These aren't hypotheticals. They're patterns we see in breach forensics every quarter — and patterns we see customers quietly avoiding. Pick one and walk through it.</p>
       </div>
 
       <div class="scenario-tabs" id="scenarioTabs"><!-- populated via JS --></div>
@@ -1580,11 +1580,11 @@
       <div class="walkthrough-frame">
         <div class="walkthrough-header">
           <div>
-            <h3 id="scenarioTitle">Phished Contractor Credentials</h3>
-            <p id="scenarioDesc">A common third-party access compromise — and how identity-first security changes the outcome.</p>
+            <h3 id="scenarioTitle">The AI Agent That Outgrew Its Lane</h3>
+            <p id="scenarioDesc">The first wave of breaches where the attacker was already inside — as your own AI.</p>
             <div class="real-world-pattern" id="scenarioPattern">
               <span class="pulse"></span>
-              <span id="scenarioPatternText">The pattern behind most third-party vendor compromises</span>
+              <span id="scenarioPatternText">The pattern behind the next generation of supply chain compromises</span>
             </div>
           </div>
           <div class="step-counter">
@@ -1601,7 +1601,7 @@
           <div class="timeline-col without">
             <div class="timeline-col-header">
               <span class="dot"></span>
-              <h4>Without Modern PAM</h4>
+              <h4>The Path Most Traveled</h4>
             </div>
             <div class="step-content visible" id="withoutContent">
               <div class="step-meta" id="withoutMeta">T+0 minutes</div>
@@ -1620,7 +1620,7 @@
           <div class="timeline-col with">
             <div class="timeline-col-header">
               <span class="dot"></span>
-              <h4>With Delinea Platform</h4>
+              <h4>The Path Delinea Cuts</h4>
             </div>
             <div class="step-content visible" id="withContent">
               <div class="step-meta" id="withMeta">T+0 minutes</div>
@@ -1660,11 +1660,10 @@
 
   <!-- CTA -->
   <section class="cta-section" id="next">
-    <h2>Ready for the next step?</h2>
-    <p>Bring this back to your team. We can run a deeper technical session, scope a Proof-of-Value tailored to your environment, or share customer references in your industry.</p>
+    <h2>What's the most useful next thing?</h2>
+    <p>Pick what fits. We can run another technical session for the people who weren't in the demo or send a recording, scope a Proof of Value tailored to your environment, or just send a few customer references in your industry. No pressure on the order. Please reach out to the Account Executive for the above.</p>
     <div class="cta-buttons">
-      <a href="https://delinea.com/contact" class="btn btn-primary btn-large">Book a Follow-up</a>
-      <a href="https://delinea.com/resources" class="btn btn-secondary btn-large">Explore More Resources</a>
+      <a href="https://delinea.com/resources" class="btn btn-secondary btn-large">Send Me References</a>
     </div>
   </section>
 
@@ -1686,397 +1685,561 @@ const roles = [
   {
     id: 'ciso',
     title: 'CISO',
-    tag: 'Security leadership & risk',
+    tag: 'The seat with the blast radius',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6l-8-4z"></path></svg>`,
-    headline: 'Reduce the blast radius of your most likely breach.',
+    headline: 'You\'re not buying tools. You\'re buying a defensible story.',
     subtitle: 'For the security leader',
     priorities: [
-      'Reduce the risk of credential-based breaches — the #1 attack vector',
-      'Demonstrate measurable control to the board and auditors',
-      'Tame identity sprawl across human, machine, and AI agents',
-      'Get ahead of regulatory exposure (SEC, DORA, NIS2)'
+      'Privileged credentials are still the #1 attack vector — and the one your board reads about most',
+      'AI agents are accumulating access faster than your governance can keep up with',
+      'Auditors and regulators are asking specifically about identity, not generic "controls"',
+      'Your team is drowning in alerts that don\'t connect to identity context'
     ],
-    capabilities: ['Identity Threat Protection', 'Risk-based access', 'Executive dashboards', 'Board-ready reporting', 'Zero Trust enforcement'],
-    outcome: 'A unified view of every privileged identity and a defensible story for the board: you know who has access to what, why, and what they did with it.'
+    capabilities: ['Identity Threat Protection', 'Iris AI risk scoring', 'Executive reporting', 'AI agent governance', 'Cross-pillar telemetry'],
+    outcome: 'When the board asks "could that breach happen to us?", you have a real answer — not a hand-wave. Identity becomes a thing you can talk about with specifics, not abstractions.'
   },
   {
     id: 'architect',
-    title: 'Security Architect/Engineer',
-    tag: 'Zero Trust & integrations',
+    title: 'Security Architect',
+    tag: 'The seat that has to design it',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`,
-    headline: 'Design identity-first security without rip-and-replace.',
-    subtitle: 'For the security architect/engineer',
+    headline: 'A reference architecture that fits the stack you actually have.',
+    subtitle: 'For the security architect',
     priorities: [
-      'Operationalize Zero Trust on a foundation of verified identity',
-      'Cover the full identity surface — humans, services, agents, NHIs',
-      'Integrate cleanly with existing IdP, SIEM, ITSM, and ticketing',
-      'Scale across hybrid, multi-cloud, and on-prem without silos'
+      'Zero Trust falls apart without a reliable identity layer to anchor it',
+      'You need to cover humans, machines, workforce identities, AI agents — without four different tools',
+      'Integrations matter more than features: IdP, SIEM, ITSM, ticketing, cloud',
+      'Cloud, on-prem, hybrid, and modern stack all in one architecture — or it\'s not workable'
     ],
-    capabilities: ['Just-in-Time access', 'Granular least privilege', 'Secret management', 'Open APIs', 'IdP/SIEM/ITSM integrations', 'Cloud-native'],
-    outcome: 'A modern PAM architecture that fits the stack you already have — and gives you the building blocks to enforce least privilege everywhere identity touches.'
+    capabilities: ['Just-in-Time access', 'Open APIs', 'IdP/SIEM/ITSM bridges', 'Workload identity', 'Multi-cloud coverage', 'Iris AI integration'],
+    outcome: 'You stop architecting around vendor gaps and start architecting around what your business actually does. Your reference diagram has fewer boxes and more arrows that actually connect.'
   },
   {
     id: 'itops',
     title: 'IT Operations',
-    tag: 'Efficiency & automation',
+    tag: 'The seat with the ticket queue',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`,
-    headline: 'Spend less time on credential toil. More time on real work.',
+    headline: 'Stop being the bottleneck for access. Without becoming the reason for the next breach.',
     subtitle: 'For IT operations',
     priorities: [
-      'Eliminate manual password rotation and reset tickets',
-      'Streamline server, database, and cloud access management',
-      'Give engineers self-service privileged access with guardrails',
-      'Automate workflows across the access lifecycle'
+      'Password reset and access tickets eat the week — engineers wait, frustration grows',
+      'You need self-service that doesn\'t make security nervous',
+      'Onboarding and offboarding are still manual in too many places — and offboarding is where mistakes get missed',
+      'Every new system means another integration project nobody scoped time for'
     ],
-    capabilities: ['Automated rotation', 'Self-service requests', 'Session management', 'Workflow automation', 'API-first', 'Fast deployment'],
-    outcome: 'Reclaim engineering hours and shrink ticket queues. Your team stops being the bottleneck for access, and security still gets the controls it needs.'
+    capabilities: ['Self-service request flows', 'HRIS-driven lifecycle', 'API-first automation', 'Native cloud connectors', 'Discovery & inventory'],
+    outcome: 'The "access ticket" Slack channel goes quiet. Engineers get what they need when they need it, and security gets the controls anyway. Your team gets to do the strategic work you keep deferring.'
   },
   {
     id: 'compliance',
-    title: 'Compliance Department',
-    tag: 'Audit & frameworks',
+    title: 'Compliance Lead',
+    tag: 'The seat that has to prove it',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line><line x1="9" y1="11" x2="15" y2="11"></line></svg>`,
-    headline: 'Pass audits with less prep. Reduce findings to near-zero.',
+    headline: 'Evidence on demand. Not evidence by manual scramble.',
     subtitle: 'For compliance & audit',
     priorities: [
-      'Demonstrate continuous control over privileged access',
-      'Map controls to SOX, PCI-DSS, HIPAA, NIST, ISO, DORA, NIS2',
-      'Generate audit-ready evidence without manual collection',
-      'Prove access reviews and attestations are happening on schedule'
+      'Audit prep takes longer every year, even though "the controls" haven\'t changed',
+      'Mapping privileged access activity to specific framework controls is still a spreadsheet exercise',
+      'Access reviews happen — but on paper, the gap between "reviewed" and "enforced" is wider than it should be',
+      'New frameworks (DORA, NIS2) keep landing without proportional new headcount'
     ],
-    capabilities: ['Session recording', 'Immutable audit logs', 'Attestation workflows', 'Control mapping', 'Compliance reports', 'Policy enforcement'],
-    outcome: 'When the auditor asks "show me," you have it. Continuous evidence collection means audit prep goes from quarters to days, and findings drop dramatically.'
+    capabilities: ['Session recording', 'Immutable audit logs', 'Attestation workflows', 'Control framework mapping', 'Continuous compliance reports'],
+    outcome: 'Audit week stops being a special event. When the auditor asks for evidence, you generate the report in the room with them. Findings drop, prep shrinks, and you finally get to leave on time during quarter-end.'
   }
 ];
 
 /* === Scenario data === */
 const scenarios = [
   {
-    id: 'phishing',
-    title: 'Phished Contractor Credentials',
-    desc: 'A common third-party access compromise — and how identity-first security changes the outcome.',
-    pattern: 'The pattern behind most third-party vendor compromises',
+    id: 'ai-agent',
+    title: 'The AI Agent That Outgrew Its Lane',
+    desc: 'The first wave of breaches where the attacker was already inside — as your own AI.',
+    pattern: 'The pattern behind the next generation of supply chain compromises',
     steps: [
       {
-        time: 'T+0 minutes',
+        time: 'Last quarter',
         without: {
-          title: 'The bait works',
-          detail: 'A contractor receives a convincing phishing email and enters their credentials on a fake portal. The attacker now has valid login info.',
-          attack: 'T1566.002 — Spearphishing Link'
+          title: 'Deployed as "just an internal tool"',
+          detail: 'Someone deploys an AI coding agent to help with PR reviews. It needs an API token to read repos. Nobody objects — it\'s scoped narrowly, it\'s "just internal."',
+          attack: 'Ungoverned NHI Onboarding'
         },
         with: {
-          title: 'The bait still works — but it doesn\'t matter',
-          detail: 'The same phishing succeeds, but the contractor\'s account has no standing privileged access. Stolen credentials alone unlock nothing critical.',
-          control: 'Just-in-Time Access'
+          title: 'Registered as an identity from day one',
+          detail: 'The same agent ships, but it\'s registered as a workload identity. Its access is scoped, time-bound, and assigned an owner. It shows up on the identity map alongside humans and service accounts.',
+          control: 'AI Agent Governance'
         }
       },
       {
-        time: 'T+10 minutes',
+        time: 'Over the next 8 weeks',
         without: {
-          title: 'Easy front-door entry',
-          detail: 'The attacker logs in over VPN with the valid credentials. No additional MFA challenge for general network access. They\'re in.',
-          attack: 'T1078 — Valid Accounts'
+          title: 'The agent\'s role quietly expands',
+          detail: 'The agent writes code, then runs CI checks, then deploys to staging. Each expansion needs a slightly broader token. Nobody redraws its access map. Nobody could — there\'s no map.',
+          attack: 'Privilege Creep — No Baseline'
         },
         with: {
-          title: 'Adaptive friction at every step',
-          detail: 'Any attempt to reach a privileged target is brokered through Delinea, requiring MFA, contextual risk checks, and a justified, time-bound access request.',
-          control: 'Adaptive MFA + Session Brokering'
+          title: 'Every expansion is observed',
+          detail: 'Each new capability triggers a posture event. The Identity Graph shows the agent\'s accumulated reach on a timeline. New permissions get reviewed before they\'re granted, not noticed years after.',
+          control: 'Iris AI Posture Monitoring'
         }
       },
       {
-        time: 'T+45 minutes',
+        time: 'T+0',
         without: {
-          title: 'Shared admin password discovered',
-          detail: 'On a file share, the attacker finds a spreadsheet with shared admin passwords — common in environments without proper vaulting.',
-          attack: 'T1552.001 — Credentials in Files'
+          title: 'A prompt-injection attack leaks context',
+          detail: 'An attacker manipulates the agent through a crafted input. The agent\'s working context — including a long-lived refresh token to your private GitHub org — leaks. The attacker pivots to internal CI.',
+          attack: 'T1552 — Unsecured Credentials'
         },
         with: {
-          title: 'Nothing left lying around',
-          detail: 'Credentials live in the Delinea vault. They\'re rotated automatically and checked out per session. There are no shared passwords on file shares to find.',
-          control: 'Centralized Vault + Auto-rotation'
+          title: 'Behavioral baseline catches the outlier',
+          detail: 'The agent\'s identity is now acting from a new geographic source at 3 a.m. Session paused, token rotated, SOC pinged with full context. The leaked credential was short-lived anyway.',
+          control: 'Behavioral Analytics + Token Brokering'
         }
       },
       {
         time: 'T+2 hours',
         without: {
-          title: 'Lateral movement begins',
-          detail: 'Using the shared admin password, the attacker hops between critical systems. Logs look normal — it\'s just an admin doing admin things.',
-          attack: 'T1021 — Remote Services'
+          title: 'A backdoor commits itself',
+          detail: 'The token has CI/CD push rights. The attacker injects a malicious commit through the agent\'s identity. Nobody flags it — the agent commits all day long.',
+          attack: 'T1195 — Supply Chain Compromise'
         },
         with: {
-          title: 'Anomalous behavior flagged',
-          detail: 'Unusual time, geo, and target patterns push the risk score over threshold. The session is automatically terminated, credentials rotated, and the SOC alerted in real time.',
-          control: 'Behavioral Analytics + Risk Scoring'
+          title: 'Push rights were just-in-time',
+          detail: 'The agent\'s deploy permissions exist only during approved windows. The attempted commit hits an approval gate, step-up verification fails, the change is blocked and recorded.',
+          control: 'Just-in-Time Deployment Access'
         }
       },
       {
-        time: 'Days later',
+        time: 'Three weeks later',
         without: {
-          title: 'Discovery via outside notification',
-          detail: 'Three weeks later, a partner reports your data on a leak site. Forensics take months. The breach makes headlines.',
-          attack: 'T1567 — Exfiltration to Web Service'
+          title: 'Customers find the tampering first',
+          detail: 'Reports come in of altered software updates. The investigation traces back to a "helpful internal tool" nobody documented owning. The press release is being drafted.',
+          attack: 'Discovery via Customer Report'
         },
         with: {
-          title: 'Forensics in minutes, not months',
-          detail: 'Full session recording and immutable audit logs make root cause analysis a 30-minute task. Blast radius: contained to zero.',
-          control: 'Session Recording + Immutable Audit'
-        }
-      }
-    ],
-    scoreboard: [
-      { metric: 'Time to Detection', without: '21 days', with: '< 60 sec' },
-      { metric: 'Systems Compromised', without: '14', with: '0' },
-      { metric: 'Records Exposed', without: '2.3M', with: '0' }
-    ],
-    outcome: {
-      title: 'Same attacker. Same phish. Different ending.',
-      body: 'The first version is a public breach. The second is a Tuesday. Identity-first PAM moves the win condition from "block every phish" (impossible) to "make the phish worthless" (achievable).'
-    }
-  },
-  {
-    id: 'laptop',
-    title: 'Stolen Admin Laptop',
-    desc: 'An endpoint with privileged access goes missing. What an attacker can do with it changes everything.',
-    pattern: 'The pattern behind most lost-device and endpoint-origin breaches',
-    steps: [
-      {
-        time: 'T+0',
-        without: {
-          title: 'Laptop disappears',
-          detail: 'A senior admin\'s laptop is stolen from their car. It contains cached credentials, browser-saved passwords, and SSH private keys.',
-          attack: 'Physical Access — Initial Foothold'
-        },
-        with: {
-          title: 'Laptop disappears, attack surface doesn\'t',
-          detail: 'The same laptop is stolen. But there are no SSH keys on disk, no cached domain admin credentials, and no browser-saved passwords for production systems.',
-          control: 'Endpoint Privilege Management'
-        }
-      },
-      {
-        time: 'T+1 hour',
-        without: {
-          title: 'Local admin extracts secrets',
-          detail: 'The attacker boots into recovery, has full local admin, and pulls out browser-saved creds, cached Kerberos tickets, and SSH keys.',
-          attack: 'T1003 — OS Credential Dumping'
-        },
-        with: {
-          title: 'Endpoint privilege bounded',
-          detail: 'Privilege Manager removes standing local admin. Even with physical access, escalation paths are policy-controlled. Sensitive secrets are vaulted, not on disk.',
-          control: 'Application Control + Least Privilege'
-        }
-      },
-      {
-        time: 'T+3 hours',
-        without: {
-          title: 'SSH keys still work',
-          detail: 'The attacker uses the stolen private keys to connect to production servers. Keys have no expiration; they\'re trusted as long as they exist.',
-          attack: 'T1021.004 — SSH Lateral Movement'
-        },
-        with: {
-          title: 'Brokered, ephemeral sessions',
-          detail: 'Server access is brokered per-session through Delinea. There are no long-lived static keys to steal — just short-lived, MFA-bound sessions.',
-          control: 'Session Brokering + Ephemeral Credentials'
-        }
-      },
-      {
-        time: 'T+8 hours',
-        without: {
-          title: 'Persistence established',
-          detail: 'The attacker creates new local admin accounts on critical servers and disables logging, ensuring they can return later.',
-          attack: 'T1136 — Create Account'
-        },
-        with: {
-          title: 'Account creation flagged automatically',
-          detail: 'Account Lifecycle Manager continuously discovers privileged accounts. Any new admin account triggers an alert and a justification workflow before it can be used.',
-          control: 'Account Lifecycle Manager'
-        }
-      },
-      {
-        time: 'Next morning',
-        without: {
-          title: 'Loss reported — too late',
-          detail: 'The admin reports the theft. IT begins a manual scramble to rotate credentials, but the damage is already done across dozens of systems.',
-          attack: 'Manual Response Lag'
-        },
-        with: {
-          title: 'One-click revocation',
-          detail: 'The admin\'s tokens are revoked centrally; active sessions terminated; vault checkouts invalidated. The window of exposure ends with one action.',
-          control: 'Centralized Revocation'
-        }
-      }
-    ],
-    scoreboard: [
-      { metric: 'Time to Revoke All Access', without: '~3 days', with: '< 2 min' },
-      { metric: 'Sensitive Data on Disk', without: '~40 GB', with: '0 GB' },
-      { metric: 'Persistent Backdoors', without: '6 servers', with: '0' }
-    ],
-    outcome: {
-      title: 'A stolen laptop should be an inconvenience, not a crisis.',
-      body: 'When standing privilege is removed and credentials are brokered just-in-time, the value of any single endpoint to an attacker collapses. Lost laptops become a hardware problem, not a security incident.'
-    }
-  },
-  {
-    id: 'insider',
-    title: 'Insider Threat — Departing Admin',
-    desc: 'A trusted senior admin with full access decides to take something on the way out the door.',
-    pattern: 'The pattern behind most insider exfiltration and missed-deprovisioning incidents',
-    steps: [
-      {
-        time: 'Day 1',
-        without: {
-          title: 'Notice given, access unchanged',
-          detail: 'A senior admin is told they\'re being let go but stays on for a 2-week notice period — with full standing access to everything.',
-          attack: 'T1098 — Account Manipulation Risk'
-        },
-        with: {
-          title: 'Access tightened automatically',
-          detail: 'Once flagged in the HRIS, the admin\'s access is narrowed: standing privileges revoked, every elevated session now requires fresh approval and is recorded.',
-          control: 'HRIS-Triggered Access Reduction'
-        }
-      },
-      {
-        time: 'Day 4',
-        without: {
-          title: 'Quiet exfiltration',
-          detail: 'Using normal admin access, the user copies sensitive customer data to a personal cloud account. Nothing trips an alarm — they have the rights to do it.',
-          attack: 'T1005 — Data from Local System'
-        },
-        with: {
-          title: 'Behavioral anomalies flagged',
-          detail: 'AI-driven analytics detect deviation from baseline: unusual data access volumes, off-hours activity, and movement to external destinations. The session is paused for review.',
-          control: 'UEBA + Risk-Based Session Control'
-        }
-      },
-      {
-        time: 'Day 8',
-        without: {
-          title: 'Backdoor planted',
-          detail: 'The admin creates a service account named to look routine. It has broad permissions, won\'t expire, and isn\'t tied to their identity.',
-          attack: 'T1136.002 — Create Domain Account'
-        },
-        with: {
-          title: 'Rogue accounts auto-discovered',
-          detail: 'The new service account is detected within minutes. Its creation lacks an approved change ticket; it\'s flagged, scoped, and reviewed before it can be used.',
-          control: 'Continuous Account Discovery'
-        }
-      },
-      {
-        time: 'Day 14 — Departure',
-        without: {
-          title: 'Manual offboarding misses things',
-          detail: 'HR triggers offboarding. IT disables their primary account but misses the service account, a few SSH keys, and an API token. Risk persists.',
-          attack: 'T1098.004 — SSH Authorized Keys'
-        },
-        with: {
-          title: 'Automated, complete deprovisioning',
-          detail: 'Departure event in HRIS triggers full revocation: every account, key, secret, and active session tied to the user is invalidated automatically across all systems.',
-          control: 'Identity Lifecycle Automation'
-        }
-      },
-      {
-        time: 'Months later',
-        without: {
-          title: 'Discovered in audit',
-          detail: 'A routine audit finds the orphan service account. By then, data has been accessed externally for months. Attribution is hard; legal exposure is real.',
-          attack: 'T1078 — Valid Accounts (Lingering)'
-        },
-        with: {
-          title: 'Discovered in 90 seconds',
-          detail: 'Session recordings, immutable logs, and behavioral baselines make malicious intent provable in real time. Most insider attempts never reach completion.',
+          title: 'Nothing to discover',
+          detail: 'The attempt sits in the timeline. The response was automatic. The postmortem is 200 words long and the customers never knew anything happened.',
           control: 'Continuous Audit + Forensic Recording'
         }
       }
     ],
     scoreboard: [
-      { metric: 'Time to Detection', without: '4 months', with: 'Same day' },
-      { metric: 'Orphan Accounts Left Active', without: '6', with: '0' },
-      { metric: 'Records Exfiltrated', without: '~150K', with: '0' }
+      { metric: 'Agents With Documented Access Maps', without: '0', with: 'All of them' },
+      { metric: 'Long-Lived Tokens in Circulation', without: '8', with: '0' },
+      { metric: 'Tampered Commits in Production', without: '12', with: '0' }
     ],
     outcome: {
-      title: 'Trust your people — verify everything else.',
-      body: 'Insider threats are uniquely hard because the actor has legitimate credentials. The Delinea Platform shifts the equation: every privileged action is observable, scoped, and reversible — making insider misuse hard to execute and impossible to hide.'
+      title: 'AI agents aren\'t "tools." They\'re identities.',
+      body: 'Treat them like the privileged users they are — registered, scoped, observable, time-bound — or get treated by them. The teams who get this right in the next 18 months will be the ones nobody hears about in incident reports.'
     }
   },
   {
-    id: 'service-account',
-    title: 'Compromised Service Account',
-    desc: 'A non-human identity gets breached. These accounts are everywhere — and most enterprises can\'t even count them.',
-    pattern: 'The pattern behind most CI/CD pipeline and Git-leak breaches',
+    id: 'merger',
+    title: 'The Merger Surprise',
+    desc: 'The risk you inherit on day one of a deal close — usually larger than the risk you came in with.',
+    pattern: 'The pattern behind most post-acquisition identity sprawl',
     steps: [
       {
-        time: 'Years before',
+        time: 'Deal close',
         without: {
-          title: 'Hardcoded and forgotten',
-          detail: 'A service account password was set in 2022 and embedded in a legacy app\'s config file. It\'s never been rotated. Nobody remembers who owns it.',
-          attack: 'CWE-798 — Hardcoded Credentials'
+          title: 'Two companies, one IT, no inventory',
+          detail: 'The acquisition closes. Marketing celebrates. The acquired company\'s IT joins your domain. Nobody has a complete list of their privileged accounts — and frankly, neither did they.',
+          attack: 'Inherited Identity Sprawl'
         },
         with: {
-          title: 'Vaulted, rotated, scoped',
-          detail: 'Service credentials are managed in the Delinea vault. Apps retrieve them at runtime via short-lived tokens; rotation is automatic; ownership is tracked.',
-          control: 'DevOps Secrets Vault'
+          title: 'Combined picture within hours',
+          detail: 'Visibility runs across both environments on day one. Every privileged identity, service account, and standing entitlement on both sides lands on one map. The unknowns become knowns.',
+          control: 'Cross-Environment Discovery'
+        }
+      },
+      {
+        time: 'Week 1 of integration',
+        without: {
+          title: '"Temporary" accounts that will live forever',
+          detail: 'The integration team creates elevated "just for migration" accounts to move data. Several of those accounts will still exist in two years, with the same passwords, undocumented.',
+          attack: 'Migration-Era Standing Privilege'
+        },
+        with: {
+          title: 'Just-in-time, even for migration',
+          detail: 'Migration uses time-bound elevation tied to specific tasks. Accounts expire when the work does. "Temporary forever" stops being a category.',
+          control: 'Just-in-Time Elevation'
+        }
+      },
+      {
+        time: 'Month 2',
+        without: {
+          title: 'The auditor asks. You guess.',
+          detail: 'An auditor asks: "How many privileged users do you have now?" You give them a number based on the systems you know about. You\'re off by about 6,000.',
+          attack: 'Phantom Inventory'
+        },
+        with: {
+          title: 'A real answer in 30 seconds',
+          detail: 'The combined inventory is current and queryable. The auditor gets a precise number with provenance. Nobody panics.',
+          control: 'Live Account Inventory'
+        }
+      },
+      {
+        time: 'Year 1',
+        without: {
+          title: 'Their breach becomes your breach',
+          detail: 'A breach at the acquired entity exposes credentials that still work on your parent network — because nobody fully tied off the trust relationships that were created on day one.',
+          attack: 'T1199 — Trusted Relationship'
+        },
+        with: {
+          title: 'Risky trust paths got closed early',
+          detail: 'Posture flagged the legacy trust relationships in week two of integration. They were closed and re-scoped before they could become a vector. The shared past doesn\'t become a shared incident.',
+          control: 'Iris AI Risk Scoring'
+        }
+      },
+      {
+        time: 'The board meeting',
+        without: {
+          title: '"Inherited" is doing a lot of work in that sentence',
+          detail: 'The board asks how the breach happened. The answer involves the word "inherited" several times. The cost of the deal goes up retroactively.',
+          attack: 'Retroactive Deal Cost'
+        },
+        with: {
+          title: 'The deal closed. The risk closed with it.',
+          detail: 'There is no post-deal identity overhang to explain. The acquisition\'s identity surface was treated like any other — discovered, posture-scored, brought under control.',
+          control: 'Integrated Identity Governance'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time to Combined Identity Inventory', without: '~18 months', with: '~4 hours' },
+      { metric: 'Unmanaged Accounts Inherited', without: '~6,000', with: '0' },
+      { metric: 'Legacy Trust Paths Still Open', without: '12 at year-end', with: '0' }
+    ],
+    outcome: {
+      title: 'M&A makes you a different company overnight.',
+      body: 'Your identity surface shouldn\'t be the last thing to catch up. Most post-acquisition breaches don\'t come from sophisticated attackers — they come from forgotten accounts and undocumented trust paths. The fix is just making them un-forgettable.'
+    }
+  },
+  {
+    id: 'oauth',
+    title: 'The OAuth Token Nobody Remembered',
+    desc: 'A forgotten SaaS-to-SaaS integration that\'s still trusted, long after everyone who set it up has moved on.',
+    pattern: 'The pattern behind the SaaS-era version of "standing privilege"',
+    steps: [
+      {
+        time: '2021',
+        without: {
+          title: 'An OAuth grant, made and forgotten',
+          detail: 'An engineer connects your CRM to a third-party analytics tool via OAuth. They pick the broadest scope to avoid breaking things during setup. They mean to come back and tighten it. They never do. Two job changes later, the integration is still there.',
+          attack: 'Over-Scoped OAuth Grant'
+        },
+        with: {
+          title: 'Scoped and owned at install',
+          detail: 'Workforce identity governance catches the OAuth grant at creation. Scope is right-sized, an owner is named, the integration goes on a renewal cycle. Forgetting it is harder than remembering it.',
+          control: 'OAuth Governance + Lifecycle'
+        }
+      },
+      {
+        time: '2024',
+        without: {
+          title: 'The vendor changes hands',
+          detail: 'The analytics tool gets acquired by a smaller company you\'ve never heard of, in a country your legal team didn\'t expect. The token still works. No re-consent is ever requested. Nobody on your side notices.',
+          attack: 'Vendor Change-of-Control'
+        },
+        with: {
+          title: 'Change-of-control caught automatically',
+          detail: 'A change in the vendor\'s identity is flagged by Posture. Trust is suspended pending re-review. The integration continues only after someone consciously says yes.',
+          control: 'Vendor Identity Monitoring'
         }
       },
       {
         time: 'T+0',
         without: {
-          title: 'Credential leaks',
-          detail: 'A junior engineer accidentally commits the config file to a public GitHub repo. The static password is now searchable on the open internet.',
-          attack: 'T1552.004 — Private Keys in Repos'
+          title: 'The vendor gets breached',
+          detail: 'A breach at the analytics vendor exposes the token. The attacker now has read access to every record in your CRM, going back a decade.',
+          attack: 'T1199 — Trusted Relationship'
         },
         with: {
-          title: 'No static password to leak',
-          detail: 'There is no hardcoded password to commit. The app authenticates to the vault using its own machine identity. Even a leaked config exposes nothing usable.',
-          control: 'Workload Identity + Secret-less Auth'
+          title: 'The leaked token doesn\'t authenticate',
+          detail: 'Tokens for this integration were rotated quarterly and cryptographically bound to the vendor\'s identity. The leaked credential authenticates as a stranger and is rejected at the door.',
+          control: 'Token Rotation + Identity Binding'
         }
       },
       {
-        time: 'T+2 hours',
+        time: 'T+72 hours',
         without: {
-          title: 'Attacker logs in',
-          detail: 'A bot scraping GitHub finds the credentials. Within hours, the attacker is using them to query production databases. The account has accumulated wide permissions over years.',
-          attack: 'T1078.004 — Cloud Valid Accounts'
+          title: 'Customers find out first',
+          detail: 'The CRM data is offered for sale on a forum. Your customers see their information in screenshots before your team sees the alert.',
+          attack: 'External Discovery'
         },
         with: {
-          title: 'Least privilege enforced',
-          detail: 'Service accounts are scoped to exactly what they need. Permissions are reviewed regularly; entitlement creep is detected and right-sized automatically.',
-          control: 'Cloud Entitlement Management'
+          title: 'Anomaly caught in under a minute',
+          detail: 'Behavioral analytics flags an authentication attempt from the breached vendor\'s IP range. The token is revoked in under 60 seconds. No records are read.',
+          control: 'Behavioral Analytics + Auto-Revocation'
         }
       },
       {
-        time: 'T+1 day',
+        time: 'The aftermath',
         without: {
-          title: 'Hidden in plain sight',
-          detail: 'Activity looks like a legitimate scheduled job. There\'s no MFA on service accounts, no anomaly detection — and the attacker quietly exfiltrates data for weeks.',
-          attack: 'T1036 — Masquerading'
+          title: '"Who owned this integration?"',
+          detail: 'Legal asks who owns the connection. The answer is "nobody technically — the original owner left in 2022." That\'s the kind of sentence that drives settlement amounts.',
+          attack: 'Orphaned Integration'
         },
         with: {
-          title: 'Behavioral baseline catches the outlier',
-          detail: 'Any deviation in source, timing, or query pattern triggers an alert. Even a "valid" credential used abnormally is treated as suspect. The session is cut and flagged.',
-          control: 'NHI Behavioral Analytics'
-        }
-      },
-      {
-        time: 'After detection',
-        without: {
-          title: 'A 90-day breach window',
-          detail: 'The breach is discovered three months later via an unrelated investigation. By then the data is everywhere. The static password is still floating around.',
-          attack: 'Long Dwell — No Rotation'
-        },
-        with: {
-          title: 'Minutes of exposure, not months',
-          detail: 'Automatic rotation means even a leaked credential has a tiny window of validity. Combined with detection, the exposure window collapses from months to minutes.',
-          control: 'Auto-rotation + Anomaly Detection'
+          title: 'Ownership was current',
+          detail: 'Ownership was reassigned automatically when the original engineer offboarded. The integration always had a current name on it. The conversation is "how did we miss this?" and the answer is "we didn\'t."',
+          control: 'HRIS-Linked Ownership'
         }
       }
     ],
     scoreboard: [
-      { metric: 'Credential Validity Window', without: '3+ years', with: '< 60 min' },
-      { metric: 'Dwell Time Before Detection', without: '91 days', with: '< 2 hours' },
-      { metric: 'Records at Risk', without: '8.2M', with: '0' }
+      { metric: 'OAuth Tokens Without an Owner', without: '47', with: '0' },
+      { metric: 'Time From Vendor Breach to Exposure', without: 'Instant', with: 'Never' },
+      { metric: 'Customer Records at Risk', without: '2.4M', with: '0' }
     ],
     outcome: {
-      title: 'Machine identities outnumber humans 45:1. Treat them that way.',
-      body: 'Most enterprises have more service accounts than people — and most of them are unrotated, over-privileged, and unmonitored. The Delinea Platform brings the same rigor to non-human identities as to humans, closing one of the largest gaps in modern security.'
+      title: 'Every OAuth grant is a piece of standing privilege you can\'t see in your normal reviews.',
+      body: 'It\'s compounding interest on a debt you don\'t know you owe. The SaaS-to-SaaS layer is where the next wave of trusted-relationship breaches will come from — the question isn\'t whether you have forgotten tokens, it\'s how many.'
+    }
+  },
+  {
+    id: 'msp',
+    title: 'The MSP With the Keys',
+    desc: 'A supply chain breach that walks in through your trusted vendor — with credentials your team gave them.',
+    pattern: 'The pattern behind the Kaseya, SolarWinds, and Okta-era third-party breaches',
+    steps: [
+      {
+        time: 'Background',
+        without: {
+          title: 'Your MSP has the master keys',
+          detail: 'Your managed service provider has admin access to your hypervisor, your backup system, and your domain controllers. They need it to do their job. They keep it in their password manager. So does every other customer they have.',
+          attack: 'Standing Vendor Credentials'
+        },
+        with: {
+          title: 'Brokered, never stored',
+          detail: 'The MSP\'s access is brokered through Delinea. They have no standing credentials to keep — they request access per task, get it for a fixed window, and every session is recorded on your side, not theirs.',
+          control: 'Vendor Session Brokering'
+        }
+      },
+      {
+        time: 'T-30 days',
+        without: {
+          title: 'The MSP gets phished',
+          detail: 'Your MSP\'s technician gets phished. The attacker spends a month inside their environment, studying their customer base. You are one of forty-seven companies whose credentials sit in their password manager.',
+          attack: 'T1199 — Trusted Relationship'
+        },
+        with: {
+          title: 'Nothing to harvest',
+          detail: 'The MSP gets phished the same way. But there\'s nothing to steal — no static credentials of yours are stored in their environment. The phish is their problem, not yours.',
+          control: 'No-Standing-Credential Architecture'
+        }
+      },
+      {
+        time: 'T+0',
+        without: {
+          title: 'A normal-looking RDP session',
+          detail: 'The attacker uses the MSP\'s saved RDP profiles to walk into your environment with domain admin rights. Your audit logs show "MSP access" — nothing unusual. They look like the MSP because they have the MSP\'s credentials.',
+          attack: 'T1078 — Valid Accounts'
+        },
+        with: {
+          title: 'Impersonation requires what they don\'t have',
+          detail: 'To use the MSP\'s access, the attacker would need to authenticate through the Delinea broker — which requires the MSP\'s MFA, identity binding, and a fresh approval. They have none of the three.',
+          control: 'MFA + Approval Workflow'
+        }
+      },
+      {
+        time: 'T+4 hours',
+        without: {
+          title: 'Ransomware reaches the backups',
+          detail: 'The encryption spreads outward from servers the MSP touches routinely. Your DR plan assumed backups would be available. The MSP also managed the backups.',
+          attack: 'T1486 — Data Encrypted for Impact'
+        },
+        with: {
+          title: 'No anomalous access reaches anywhere',
+          detail: 'The MSP\'s daily activity continues, observed and recorded. Nothing reaches the backup tier without a fresh approval, and the request never comes — because there\'s no attacker that can make it.',
+          control: 'Granular Scoping + Approval Gates'
+        }
+      },
+      {
+        time: 'The lesson',
+        without: {
+          title: 'A year explaining it to regulators',
+          detail: 'You spend the next year explaining to regulators, customers, and your insurer why a vendor\'s compromise became your incident. The MSP gets a new logo. You get a new line item on your insurance renewal.',
+          attack: 'Regulatory Aftermath'
+        },
+        with: {
+          title: 'Their problem stays theirs',
+          detail: 'Your vendor\'s compromise stays your vendor\'s compromise. You read about it in industry news. Your customers don\'t.',
+          control: 'Containment by Architecture'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Standing Vendor Credentials in Your Environment', without: '12', with: '0' },
+      { metric: 'Time from MSP Compromise to Encryption', without: '8 hours', with: 'Never' },
+      { metric: 'Backups Encrypted', without: 'All of them', with: 'None' }
+    ],
+    outcome: {
+      title: 'Your vendors\' security is your security. Whether you like it or not.',
+      body: 'The only way to keep their problems from becoming yours is to give them no keys to leave behind. Brokered access isn\'t a control you add for paranoia — it\'s the only thing that survives a supply chain compromise.'
+    }
+  }  ,
+  {
+    id: 'domain-admin',
+    title: 'The Domain Admin Password From 2017',
+    desc: 'The master key that opens every lock in your environment — and hasn\'t changed since someone\'s second job.',
+    pattern: 'The pattern behind most "how did they move so fast?" incident reports',
+    steps: [
+      {
+        time: 'Background',
+        without: {
+          title: 'Set once, shared forever',
+          detail: 'A domain admin password gets set during a server migration in 2017. It\'s shared via "the IT password doc." It\'s been used by every senior engineer since — including a few who don\'t work there anymore.',
+          attack: 'Shared Static Credential'
+        },
+        with: {
+          title: 'Vaulted, rotated, brokered',
+          detail: 'Domain admin credentials live in the Delinea vault. They rotate automatically after every checkout. Nobody — not even your senior engineers — actually knows the current password.',
+          control: 'Automated Credential Rotation'
+        }
+      },
+      {
+        time: 'T+0',
+        without: {
+          title: 'A laptop, a memory dump',
+          detail: 'An attacker compromises a senior engineer\'s laptop through a routine phishing attempt. They dump LSASS memory and pull a cached domain admin Kerberos ticket. The password might be old, but the privilege is current.',
+          attack: 'T1003.001 — LSASS Memory'
+        },
+        with: {
+          title: 'Nothing cached, nothing standing',
+          detail: 'The engineer never had standing domain admin rights. They request elevated access just-in-time, get it for the duration of the task, and the credential rotates the moment they\'re done. There\'s no useful ticket to dump.',
+          control: 'Just-in-Time Elevation'
+        }
+      },
+      {
+        time: 'T+30 minutes',
+        without: {
+          title: 'Domain dominance',
+          detail: 'The attacker uses the harvested ticket to authenticate as domain admin across the environment. Every domain controller, every file server, every database — all open. The lateral movement isn\'t lateral, it\'s vertical and instant.',
+          attack: 'T1078.002 — Domain Accounts'
+        },
+        with: {
+          title: 'No master key to find',
+          detail: 'There is no "domain admin password" sitting in a doc or a cache. Every elevated session requires fresh authentication, MFA, and an approval workflow tied to a specific task.',
+          control: 'Session Brokering + MFA'
+        }
+      },
+      {
+        time: 'The quarterly review',
+        without: {
+          title: 'A box gets checked anyway',
+          detail: 'Three weeks before the breach, the access review marked "Domain admin policy in place: yes." Nobody asked when the password actually rotated. The control existed on paper, not in practice.',
+          attack: 'Paper Control vs. Reality'
+        },
+        with: {
+          title: 'The control runs itself',
+          detail: 'There is no "domain admin policy" question to lie about. Rotation is enforced by the platform, logged immutably, and reportable in two clicks. The control isn\'t a checkbox — it\'s a service that\'s either running or not.',
+          control: 'Enforced Policy + Immutable Audit'
+        }
+      },
+      {
+        time: 'The incident report',
+        without: {
+          title: '"Set in 2017, last changed: never"',
+          detail: 'The forensic report has one paragraph everyone reads. It says the breach used a domain admin credential set during a server migration the company doesn\'t fully remember. The CISO learns this from the report.',
+          attack: 'Credential Age: Years'
+        },
+        with: {
+          title: 'No paragraph to write',
+          detail: 'The credential the attacker grabbed was valid for the length of one session. By the time they tried to use it again, it had been rotated dozens of times. The forensic report is short.',
+          control: 'Credential Age: Minutes'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time Since Last Domain Admin Password Change', without: '7+ years', with: 'Every checkout' },
+      { metric: 'Time From Foothold to Domain Dominance', without: '~30 min', with: 'Never' },
+      { metric: 'People Who Currently Know the Password', without: '14', with: '0' }
+    ],
+    outcome: {
+      title: 'Domain admin is the master key. If it hasn\'t changed in years, your security posture is whatever year that was.',
+      body: 'Static, shared, long-lived credentials are the single most reliable predictor of how fast an attacker will own your environment. Rotating them isn\'t a one-time hygiene project — it\'s a service that should run continuously, automatically, and without anybody on your team having to remember to schedule it.'
+    }
+  },
+  {
+    id: 'service-accounts',
+    title: 'The Service Accounts Nobody Could Count',
+    desc: 'The accounts that run your company — sprawled across scripts, scheduled tasks, and systems nobody remembers building.',
+    pattern: 'The pattern behind "we tried to rotate it and three things broke"',
+    steps: [
+      {
+        time: 'The audit ask',
+        without: {
+          title: '"Show me where this account is used"',
+          detail: 'An auditor asks where a particular service account is used. IT can answer for the systems they know about. The honest answer is "we don\'t actually know all the places it\'s being used." That answer doesn\'t go in the report.',
+          attack: 'Unmapped Service Identity'
+        },
+        with: {
+          title: 'A real answer in seconds',
+          detail: 'Discovery has mapped every system, script, scheduled task, and config file that authenticates with that account. The auditor gets a map, not a guess. So does the security team.',
+          control: 'Service Account Discovery'
+        }
+      },
+      {
+        time: 'The legacy reality',
+        without: {
+          title: 'Hardcoded in 47 places',
+          detail: 'Behind the scenes, the service account password is hardcoded in 47 places: legacy Perl scripts, a few scheduled tasks, a config file on a server nobody manages anymore, a connection string in an app outsourced to a vendor in 2019.',
+          attack: 'CWE-798 — Hardcoded Credentials'
+        },
+        with: {
+          title: 'Retrieved at runtime, never stored',
+          detail: 'Applications and scripts pull credentials from the vault at runtime using their own workload identity. There are no static passwords sitting in config files — even the legacy applications get refactored onto secret-less authentication during onboarding.',
+          control: 'Secret-less Workload Authentication'
+        }
+      },
+      {
+        time: 'The rotation attempt',
+        without: {
+          title: '"Just rotate it" — three things break',
+          detail: 'A well-meaning engineer proposes rotating the account. They rotate it. Three production systems stop working — the password was hardcoded in places nobody remembered. Rotation gets reverted. The proposal becomes "we\'ll do it next quarter." Three years pass.',
+          attack: 'Rotation Paralysis'
+        },
+        with: {
+          title: 'Rotation is a non-event',
+          detail: 'Because every consumer pulls credentials at runtime, rotation propagates automatically. No application breaks. No engineer gets paged at 3 a.m. The rotation that used to be a quarterly fire drill becomes a Tuesday.',
+          control: 'Automated Rotation Propagation'
+        }
+      },
+      {
+        time: 'T+0',
+        without: {
+          title: 'Found in a public repo',
+          detail: 'A junior developer pushes a config file to a public GitHub repo. A bot scraping repos finds the service account credential within hours. The password hasn\'t changed in years, and the account has accumulated permissions over the same years.',
+          attack: 'T1552.004 — Private Keys in Repos'
+        },
+        with: {
+          title: 'Nothing in the repo to find',
+          detail: 'There\'s no static credential in the config file. The application authenticates to the vault using its workload identity. The pushed config exposes nothing usable. The bot scraping repos finds nothing actionable.',
+          control: 'Workload Identity + Vault Retrieval'
+        }
+      },
+      {
+        time: 'Months later',
+        without: {
+          title: 'Discovered everywhere, slowly',
+          detail: 'The breach is discovered when unusual database queries trigger an unrelated alert. Tracking down every place the compromised service account is used takes the team three months. Some places are still being found a year later.',
+          attack: 'Long-Tail Cleanup'
+        },
+        with: {
+          title: 'Discovered in real time',
+          detail: 'Behavioral analytics flagged the unusual query pattern within minutes. Because every authenticated session is observable, the scope of the compromise was clear within an hour. Cleanup was a checklist, not an excavation.',
+          control: 'NHI Behavioral Analytics'
+        }
+      }
+    ],
+    scoreboard: [
+      { metric: 'Time to Map a Service Account\'s Usage', without: '~3 months', with: '< 5 minutes' },
+      { metric: 'Service Accounts That Have Never Rotated', without: '312', with: '0' },
+      { metric: 'Systems Broken During Last Rotation Attempt', without: '7', with: '0' }
+    ],
+    outcome: {
+      title: 'Service accounts are the most powerful, least observed identities in your environment.',
+      body: 'Most enterprises have more service accounts than humans — and most have never been rotated, never been mapped, and never been formally owned. Rotating them shouldn\'t be a quarterly fire drill that breaks production. It should be a Tuesday that nobody notices.'
     }
   }
 ];
@@ -2110,7 +2273,7 @@ function selectRole(id) {
           <div class="subtitle">${role.subtitle}</div>
           <h4>${role.headline}</h4>
           <div class="detail-block">
-            <div class="label">What's top of mind</div>
+            <div class="label">What we hear from your peers</div>
             <ul class="detail-list">
               ${role.priorities.map(p => `<li>${p}</li>`).join('')}
             </ul>
@@ -2118,13 +2281,13 @@ function selectRole(id) {
         </div>
         <div>
           <div class="detail-block">
-            <div class="label">Capabilities that matter</div>
+            <div class="label">Where the platform shows up for you</div>
             <div class="capability-pills">
               ${role.capabilities.map(c => `<span class="capability-pill">${c}</span>`).join('')}
             </div>
           </div>
           <div class="detail-block">
-            <div class="label">The outcome</div>
+            <div class="label">What changes about your week</div>
             <div class="outcome-card">${role.outcome}</div>
           </div>
         </div>
@@ -2141,54 +2304,54 @@ const products = [
     name: 'Visibility',
     short: 'Pillar 01',
     tagline: 'Illuminate YOUR identities.',
-    tag: 'Discover and inventory every human, machine, workforce, developer, and AI identity across your stack.',
+    tag: 'Count what you have before someone else does it for you.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`,
-    solves: 'You can\'t secure what you can\'t see. Most enterprises have no single source of truth for who or what has privileged access — humans, machines, workforce identities, developer accounts, and now AI agents are spread across silos. Visibility brings them all into one continuously-updated picture.',
+    solves: 'The first thing a good pen tester does isn\'t break in. It\'s count what you have. Most enterprises lose that race before it starts — humans, machines, workforce identities, developer accounts, AI agents, all sprawled across silos that don\'t talk to each other. Visibility wins it: every identity, on one map that updates itself.',
     components: [
-      { title: 'Identity Discovery', desc: 'Continuously discover every human, machine, workforce, developer, and AI identity across cloud, on-prem, and modern stack.' },
-      { title: 'Account Inventory', desc: 'A live inventory of every privileged account, secret, and entitlement — always current, never stale.' },
-      { title: 'Identity Graph', desc: 'Map relationships between identities, accounts, and resources to surface real attack paths before attackers do.' },
-      { title: 'AI Agent Discovery', desc: 'Find autonomous agents, copilots, and bots — the fastest-growing and most ungoverned identity class.' },
-      { title: 'Machine Identity Visibility', desc: 'Track service accounts, workload identities, and certificates that humans never see but attackers always find.' },
-      { title: 'Cross-Environment Coverage', desc: 'Cloud, on-premise, hybrid, modern stack — one pane of glass across the entire identity surface.' }
+      { title: 'Identity Discovery', desc: 'Continuously find every privileged identity across cloud, on-prem, and modern stack — no surveys, no spreadsheets, no "we think we got them all."' },
+      { title: 'Live Account Inventory', desc: 'A real-time picture of accounts, secrets, and entitlements. Always current, queryable, exportable.' },
+      { title: 'Identity Graph', desc: 'See the relationships between identities, accounts, and resources — so you can spot attack paths before attackers do.' },
+      { title: 'AI Agent Discovery', desc: 'Find autonomous agents, copilots, and bots already operating with credentials in your environment. Most teams have more than they realize.' },
+      { title: 'Machine Identity Visibility', desc: 'Track service accounts, workload identities, and certificates that humans never look at but attackers always find.' },
+      { title: 'Cross-Environment Coverage', desc: 'Cloud, on-prem, hybrid, modern stack — one view across the whole identity surface, not four dashboards stitched together.' }
     ],
-    value: 'Know every identity. See every account. Map every path. The foundation everything else builds on.'
+    value: 'Know every identity. See every account. Map every path. Everything else builds on this — and skipping it is the most common reason PAM projects stall.'
   },
   {
     id: 'posture',
     name: 'Posture',
     short: 'Pillar 02',
     tagline: 'Quantify YOUR Risk.',
-    tag: 'Surface stale accounts, misconfigurations, shadow AI, and over-permissioned identities — ranked by risk.',
+    tag: 'Some forgotten accounts will cost you nothing. Some will cost you everything. Know which.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>`,
-    solves: 'Most security teams know they have identity risk — they just can\'t quantify it or prioritize it. Posture turns identity sprawl into a measurable, ranked picture of risk: stale accounts, misconfigurations, shadow AI, and over-permissioned identities — with concrete remediation guidance, not just findings dumped in a queue.',
+    solves: 'Risk isn\'t binary. Some forgotten accounts will sit there forever and cost you nothing. Some will be the one that takes down a quarter. Posture sorts them — stale, misconfigured, over-permissioned, shadowed by AI you didn\'t deploy — and tells you which ones to fix this week versus this quarter. Iris AI does the heavy ranking; your team does the deciding.',
     components: [
-      { title: 'Stale Account Detection', desc: 'Surface dormant accounts and forgotten credentials before attackers find them first.' },
-      { title: 'Misconfiguration Analysis', desc: 'Detect risky configurations across identity providers, access policies, and entitlements.' },
-      { title: 'Shadow AI Discovery', desc: 'Identify ungoverned AI tools and agents using corporate credentials without oversight.' },
-      { title: 'Over-Permissioned Identities', desc: 'Find identities with more access than they need, scored by potential blast radius.' },
-      { title: 'Risk Scoring & Prioritization', desc: 'Continuously rank issues so your team always knows what to fix first.' },
-      { title: 'Remediation Guidance', desc: 'Specific, actionable next steps — not a wall of findings to triage manually.' }
+      { title: 'Stale Account Detection', desc: 'Surface dormant accounts and forgotten credentials. The ones nobody owns are the ones attackers find first.' },
+      { title: 'Misconfiguration Analysis', desc: 'Find risky setups across identity providers, access policies, and entitlements — without manual review.' },
+      { title: 'Shadow AI Discovery', desc: 'Identify AI tools and agents using corporate credentials without anyone\'s sign-off. The fastest-growing category of ungoverned identity.' },
+      { title: 'Over-Permissioned Identities', desc: 'Spot identities holding more access than they\'ve actually used, scored by what they could touch if compromised.' },
+      { title: 'Iris AI Risk Scoring', desc: 'Continuously rank every finding so your team always knows what to fix first — not just what got flagged.' },
+      { title: 'Remediation Guidance', desc: 'Specific, actionable next steps tied to each finding. Not a wall of alerts to triage manually.' }
     ],
-    value: 'Turn identity hygiene from gut feel into measurable, prioritized progress your team can actually act on.'
+    value: 'Turn identity hygiene from gut feel into measurable, prioritized progress. Your team stops chasing every finding and starts moving the needle on the ones that matter.'
   },
   {
     id: 'control',
     name: 'Control',
     short: 'Pillar 03',
     tagline: 'Accelerate YOUR Business.',
-    tag: 'Vault credentials, reduce standing privilege, refactor permissions, and enforce policy — automatically.',
+    tag: 'Make the right thing the easy thing. So nobody works around it.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>`,
-    solves: 'Security and speed are usually a tradeoff — every new control creates a ticket queue. Control breaks that tradeoff with automated enforcement: vault credentials, reduce standing privilege, refactor permissions, and enforce policy at the speed of business — without slowing anyone down.',
+    solves: 'Old PAM made people hate security. They worked around it, you got tickets, nothing actually got safer. Modern Control is different: vault what should be vaulted, expire what shouldn\'t last, refactor what\'s overgrown, and enforce all of it without making someone wait for a Slack reply.',
     components: [
-      { title: 'Vault Accounts', desc: 'Centralize every privileged credential, secret, and key in one auditable, brokered location.' },
-      { title: 'Reduce Standing Privilege', desc: 'Replace persistent admin rights with just-in-time, time-bound elevation — the highest-leverage move in PAM.' },
-      { title: 'Refactor Permissions', desc: 'Right-size entitlements automatically based on actual usage, not legacy assumptions.' },
-      { title: 'Enforce Policy', desc: 'Apply consistent access policy across cloud, on-prem, and SaaS — without integration sprawl.' },
-      { title: 'Automated Workflows', desc: 'Approval, provisioning, and deprovisioning all run automatically across the identity lifecycle.' },
-      { title: 'Session Brokering & Recording', desc: 'Every privileged session — brokered, recorded, reviewable, and audit-ready.' }
+      { title: 'Vault Accounts', desc: 'Every privileged credential, secret, and key in one place — discovered, rotated, brokered, audited.' },
+      { title: 'Reduce Standing Privilege', desc: 'Replace persistent admin rights with just-in-time elevation. The single highest-leverage move you can make.' },
+      { title: 'Refactor Permissions', desc: 'Right-size entitlements automatically based on actual usage, not on what someone asked for three years ago.' },
+      { title: 'Enforce Policy', desc: 'Apply consistent access policy across cloud, on-prem, and SaaS — without managing four sets of rules.' },
+      { title: 'Automated Workflows', desc: 'Approval, provisioning, deprovisioning — all run on rails, not in someone\'s inbox.' },
+      { title: 'Session Brokering & Recording', desc: 'Every privileged session is brokered, recorded, and reviewable. Audit-ready by default, not by quarterly scramble.' }
     ],
-    value: 'Move fast, safely. Enforce least privilege at the speed of business — automated, audit-ready, and policy-driven.'
+    value: 'Move fast, safely. The friction your team complains about goes down. The controls your auditors look for go up. Both at once — that\'s the math that changes.'
   }
 ];
 
@@ -2240,7 +2403,7 @@ function selectProduct(id) {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </div>
         <div class="product-value-text">
-          <div class="v-label">The Outcome</div>
+          <div class="v-label">Why this matters</div>
           <p>${product.value}</p>
         </div>
       </div>
@@ -2328,13 +2491,13 @@ document.getElementById('nextStep').addEventListener('click', () => {
     grid.innerHTML = sc.scoreboard.map(s => `
       <div class="score-card">
         <div class="score-metric">${s.metric}</div>
-        <div class="score-without-label">Without modern PAM</div>
+        <div class="score-without-label">The path most traveled</div>
         <div class="score-without">${s.without}</div>
         <div class="score-arrow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
         </div>
         <div class="score-with">${s.with}</div>
-        <div class="score-with-label">With Delinea Platform</div>
+        <div class="score-with-label">The path Delinea cuts</div>
       </div>
     `).join('');
 
